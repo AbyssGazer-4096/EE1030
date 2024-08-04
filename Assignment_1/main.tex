@@ -1,0 +1,196 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{ASSIGNMENT - 1}
+\author{EE24BTECH11019 - Dwarak A}
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}[label=\textcolor{magenta}{\arabic*.}]
+%1
+    \item A parabola has the origin as its focus and the line x = 2 as the directrix. Then the vertex of the parabola is at
+    \hfill{\textcolor{magenta}{[2008]}}
+
+    \begin{tabbing}
+        (a) $(0,2)$ \hspace{.8em} \= (b) $(1,0)$ \hspace{.8em} \= (c) $(0,1)$ \hspace{.8em} \= (d) $(2,0)$ \\
+    \end{tabbing}
+%2
+    \item The ellipse $x^2+4y^2=4$ is inscribed in a rectangle aligned with the coordinate axes, which in turn is inscribed in another ellipse that passes through the point (4,0). Then the equation of the ellipse is:
+    \hfill{\textcolor{magenta}{[2009]}}
+
+    \begin{tabbing}
+        (a) $x^2+12y^2=16$ \hspace{1.2em} \= (b) $4x^2+48y^2=48$ \\
+        (c) $4x^2+64y^2=48$ \hspace{0.7em} \= (d) $x^2+16y^2=16$ \\
+    \end{tabbing}
+%3
+    \item If two tangents drawn from a point P to the parabola $y^2=4x$ are at right angles, then the locus of P is
+    \hfill{\textcolor{magenta}{[2010]}}
+    
+    \begin{tabbing}
+        (a) $2x+1=0$ \hspace{3.2em} \= (b) $x=-1$ \\
+        (c) $2x-1=0$ \hspace{3.2em} \= (d) $x=1$ \\
+    \end{tabbing}
+%4
+    \item Equation of the ellipse whose axes are the axes of coordinates and which passes through
+    the point (-3,1) and has eccentricity $\sqrt{\frac{2}{5}}$
+    \hfill{\textcolor{magenta}{[2011]}}
+    
+    \begin{tabbing}
+        (a) $5x^2+3y^2-48=0$ \hspace{0em} \= (b) $3x^2+5y^2-15=0$ \\
+        (c) $5x^2+3y^2-32=0$ \hspace{0em} \= (d) $3x^2+5y^2-32=0$ \\
+    \end{tabbing}
+%5
+    \item
+    \textcolor{magenta}{Statement-1 :} An equation of a common tangent to the parabola $y^2=16\sqrt{3}x$ and the ellipse $2x^2+y^2=4$ is $y=3x+2\sqrt{3}$
+    
+    \textcolor{magenta}{Statement-2 :} If the line $y=mx+\frac{4\sqrt{3}}{m},(m\neq0)$ is a common tangent to the parabola $y^2=16\sqrt{3}x$ and the ellipse $2x^2+y^2=4$,then \textit{m} satisfies $m^4+2m^2=24$ 
+    \hfill{\textcolor{magenta}{[2012]}}
+    
+    (a) Statement-1 is false,Statement-2 is true.\\
+    (b) Statement-1 is true,Statement-2 is true; Statement-2
+    is a correct explanation for Statement-1\\
+    (c) Statement-1 is true,Statement-2 is true; Statement-2
+    is \textbf{not} a correct explanation for Statement-1\\
+    (d) Statement-1 is true,Statement-2 is false.\\
+%6  
+    \item An ellipse is drawn by taking a diameter of the circle $(x-1)^2+y^2=1$ as its semi-minor axis and a diameter of the circle $x2+(y-2)^22=4$ is semi-major axis. If the centre of the ellipse is at the origin and its axes are the coordinate axes, then the equation of the ellipse is: 
+    \hfill{\textcolor{magenta}{[2012]}}
+    
+    \begin{tabbing}
+        (a) $4x^2+y^2=4$ \hspace{3em} \= (b) $x^2+4y^2=8$ \\
+        (c) $4x^2+y^2=8$ \hspace{3em} \= (d) $x^2+4y^2=16$ \\
+    \end{tabbing}
+%7
+    \item The equation of the circle passing through the foci of the ellipse $\frac{x^2}{16}+\frac{y^2}{9}=1$, and have a center at $(0,3)$ is
+    
+    \hfill{\textcolor{magenta}{[JEE M 2013]}}
+    
+    \begin{tabbing}
+        (a) $x^2+y^2-6y-7=0$ \hspace{0em} \= (b) $x^2+y^2-6y+7=0$ \\
+        (c) $x^2+y^2-6y-5=0$ \hspace{0em} \= (d) $x^2+y^2-6y+5=0$ \\
+    \end{tabbing}
+%8
+    \item
+    \textcolor{magenta}{Given : }A circle,$2x^2+2y^2=5$ and a parabola, $y^2=4\sqrt{5}x$.
+    
+    \textcolor{magenta}{Statement-1 :} An equation of a common tangent to these curves is $y=x+\sqrt{5}$.
+    
+    \textcolor{magenta}{Statement-2 :} If the line, $y=mx+\frac{\sqrt{5}}{m} (m\neq0)$ is their common tangent, then \textit{m} satisfies $m^4-3m^2+2=0$.
+
+    \hfill{\textcolor{magenta}{[JEE M 2013]}}
+    
+    (a) Statement-1 is true,Statement-2 is true; Statement-2
+    is a correct explanation for Statement-1\\
+    (b) Statement-1 is true,Statement-2 is true; Statement-2
+    is \textbf{not} a correct explanation for Statement-1\\
+    (c) Statement-1 is true,Statement-2 is false.\\
+    (d) Statement-1 is false,Statement-2 is true.\\
+%9
+    \item The locus of the foot of perpendicular drawn from the centre of the ellipse $x^2+3y^2=6$ on any tangent to it is
+    
+    \hfill{\textcolor{magenta}{[JEE M 2014]}}
+    
+    \begin{tabbing}
+        (a) $(x^2+y^2)^2=6x^2+2y^2$ \hspace{0em} \= (b) $(x^2+y^2)^2=6x^2-2y^2$ \\
+        (c) $(x^2-y^2)^2=6x^2+2y^2$ \hspace{0em} \= (d) $(x^2-y^2)^2=6x^2-2y^2$ \\
+    \end{tabbing}
+
+    \newpage
+%10
+    \item The slope of the line touching both the parabolas $y^2=4x$ and $x^2=-32y$
+
+    \hfill{\textcolor{magenta}{[JEE M 2014]}}
+    \begin{tabbing}
+        (a) $\frac{1}{8}$ \hspace{2em} \= (b) $\frac{2}{3}$ \hspace{2em} \= (c) $\frac{1}{2}$ \hspace{2em} \= (d) $\frac{3}{2}$ \\
+    \end{tabbing}
+%11
+    \item Let O be the vertex and Q be any point on the parabola, $x=8y$. If the point P divides the line segment OQ internally in the ratio 1:3, then locus of P is:
+    \hfill{\textcolor{magenta}{[JEE M 2015]}}
+    \begin{tabbing}
+        (a) $y^2=2x$ \hspace{0em} \= (b) $x^2=2y$ \hspace{0em} \= (c) $x^2=y$ \hspace{0em} \= (d) $y^2=x$ \\
+    \end{tabbing}
+%12
+    \item The normal to the curve, $x^2+2xy-3y^2=0$, at $(1,1)$
+    \hfill{\textcolor{magenta}{[JEE M 2015]}}
+
+    (a) meets the curve again in the third quadrant.\\
+    (b) meets the curve again in the fourth quadrant.\\
+    (c) does not meet the curve again.\\
+    (d) meets the curve again in the second quadrant.\\
+%13
+    \item The area (in sq. units) of the quadrilateral formed by the tangents at the end points of the latera recta to the ellipse $\frac{x^2}{9}+\frac{y^2}{5}=1$, is :
+    
+    \hfill{\textcolor{magenta}{[JEE M 2015]}}
+    \begin{tabbing}
+        (a) $\frac{27}{2}$ \hspace{2em} \= (b) $27$ \hspace{2em} \= (c) $\frac{27}{4}$ \hspace{2em} \= (d) 18 \\
+    \end{tabbing}
+%14
+    \item Let P be the point on the parabola, $y^2=8x$ which is at a minimum distance from the centre C of the circle, $x^2+(y+6)^2=1$. Then the equation of the circle, passing through C and having its centre at P is:
+    \hfill{\textcolor{magenta}{[JEE M 2016]}}
+    (a) $x^2+y^2-\frac{x}{4}+2y-24=0$\\
+    (b) $x^2+y^2-4x+9y+18=0$\\
+    (c) $x^2+y^2-4x+8y+12=0$\\
+    (d) $x^2+y^2-4x+4y-12=0$\\
+%15
+    \item The eccentricity of the hyperbola whose length of the latus rectum is equal to 8 and the length of its conjugate axis is equal to half of the distance between its foci, is :
+    \hfill{\textcolor{magenta}{[JEE M 2016]}}
+    \begin{tabbing}
+        (a) $\frac{2}{\sqrt{3}}$ \hspace{2em} \= (b) $\sqrt{3}$ \hspace{2em} \= (c) $\frac{4}{3}$ \hspace{2em} \= (d)$\frac{4}{\sqrt{3}}$\\
+    \end{tabbing}
+    
+\end{enumerate}
+
+\end{document}
