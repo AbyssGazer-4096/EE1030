@@ -1,0 +1,326 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{ASSIGNMENT - 2
+
+SECTION-A | JEE ADVANCED / IIT-JEE}
+\author{EE24BTECH11019 - DWARAK A}
+
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section*{E - SUBJECTIVE PROBLEMS}
+\bigskip
+
+\begin{enumerate}
+	%1
+	\item Let $a>0$, $d>0$. Find the value of the determinant
+
+		\hfill(1996 - 5 Marks)
+		$$\begin{vmatrix}
+			\frac{1}{a} & \frac{1}{a(a+d)} & \frac{1}{(a+d)(a+2d)} \\
+			\frac{1}{a+d} & \frac{1}{(a+d)(a+2d)} & \frac{1}{(a+2d)(a+3d)} \\
+			\frac{1}{(a+2d)} & \frac{1}{(a+2d)(a+3d)} & \frac{1}{(a+3d)(a+4d)}
+		\end{vmatrix}$$
+
+	%2
+	\item Prove that for all values of $\theta$ ,
+		$$\begin{vmatrix}
+			\sin\theta & \cos\theta & \sin$2$\theta \\
+			\sin\brak{\theta+\frac{2\pi}{3}} & \cos\brak{\theta+\frac{2\pi}{3}} & \sin\brak{2\theta+\frac{4\pi}{3}} \\
+			\sin\brak{\theta-\frac{2\pi}{3}} & \cos\brak{\theta-\frac{2\pi}{3}} & \sin\brak{2\theta-\frac{4\pi}{3}}
+		\end{vmatrix} = 0$$
+		\hfill(2000 - 3 Marks)
+
+	%3
+	\item If matrix 
+		$A = \begin{bmatrix}
+			a & b & c \\
+			b & c & a \\
+			c & a & b
+		\end{bmatrix} $
+		where $a,b,c$ are real positive numbers, $abc=1$ and $A^TA=I$, then find the value of $a^3+b^3+c^3$.
+
+		\hfill(2003 - 2 Marks)
+
+	%4
+	\item If $M$ is a $3\times3$ matrix, where det $M=1$ and $MM^T=I$, where 'I' is an identity matrix, prove that det$(M-I)=0$.
+		
+		\hfill(2004 - 2 Marks)
+
+	%5
+	\item If $A = \begin{bmatrix}
+			a & 1 & 0 \\
+			1 & b & d \\
+			1 & b & c \end{bmatrix}$ ,
+		$B = \begin{bmatrix}
+			a & 1 & 1 \\
+			0 & d & c \\
+			f & g & h \end{bmatrix}$ ,
+		$U = \begin{bmatrix}
+			f \\
+			g \\
+			h \end{bmatrix}$ ,
+		$V = \begin{bmatrix}
+			a^2 \\
+			0 \\
+			0 \end{bmatrix}$ ,
+		$X = \begin{bmatrix}
+			x \\
+			y \\
+			z \end{bmatrix}$
+		and $AX=U$ has infinitely many solutions, prove that $BX=V$ has no unique solution. Also show that if afd $\neq0$, then $BX=V$ has no solution.
+
+		\hfill(2004 - 4 Marks)
+\end{enumerate}
+
+\onecolumn
+
+\section*{F - MATCH THE FOLLOWING}
+\bigskip
+\begin{enumerate}
+	\item Consider the lines given by
+		$L_1:x+3y-5=0; L_2:3x-ky-1=0; L_3:5x+2y-12=0$
+
+		Match the Statements/Expressions in \textbf{Column I} with the Statements/Expressions in \textbf{Column II} and indicate your answer by darkening the appropriate bubbles in the $4\times4$ matrix given in the ORS.
+
+		\hfill(2008)
+
+		\begin{tabular}{p{12cm} p{3cm}}
+			Column I & Column II \\
+			(A) $L_1,L_2,L_3$ are concurrent, if & (p) $k=9$ \\
+			(B) One of $L_1,L_2,L_3$ is parallel to at least one of the other two, if & (q) $k=\frac{-6}{5}$ \\
+			(C) $L_1,L_2,L_2$ from a triangle, if & (r) $k=\frac{5}{6}$ \\
+			(D) $L_1,L_2,L_3$ do not form a triangle, if & (s) $k=5$
+		\end{tabular}
+
+
+	\item  Match the Statements/Expressions in \textbf{Column I} with the Statements/Expressions in \textbf{Column II} and indicate your answer by darkening the appropriate bubbles in the $4\times4$ matrix given in the ORS.
+
+		\hfill(2008)
+
+		\begin{tabular}{p{12cm} p{3cm}}
+			Column I & Column II \\
+			(A) The minimum value of $\frac{x^2+2x+4}{x+2}$ is & (p) $0$ \\
+			(B) Let A and B be $3\times3$ matrices of real numbers, where A is symmetric, B is skew-symmetric and $(A+B)(A-B)=(A-B)(A+B)$. If $(AB)^t=(-1)^kAB$, where $(AB)^t$ is the transpose of the matrix $AB$, then the possible values of $k$ are & (q) $1$ \\
+			(C) Let $a=\log_3\log_32$. An integer $k$ satisfying $1<2^{\brak{-k+3^{-a}}}<2$, must be less than & (r) $2$ \\
+			(D) If $\sin\theta=\cos\phi$, then the possible values of $\frac{1}{\pi}\brak{\theta\pm\phi-\frac{\pi}{2}} are $ & (s) $3$
+		\end{tabular}
+\end{enumerate}
+
+\bigskip
+
+\begin{multicols}{2}
+
+	\section*{G - COMPREHENSION BASED QUESTIONS}
+
+	\bigskip
+
+	{\centering PASSAGE - 1 \par}
+
+	\bigskip	
+
+	Let $A = \begin{bmatrix}
+		1 & 0 & 0 \\
+		2 & 1 & 0 \\
+	3 & 2 & 1 \end{bmatrix}$ and $U_1$, $U_2$ and $U_3$ are columns of a $3\times3$ matrix $U$. If column matrices $U_1$, $U_2$ and $U_3$ satisfying 
+	$AU_1 = \begin{bmatrix}
+		1 \\
+		0 \\
+		0 \end{bmatrix}$,
+	$AU_2 = \begin{bmatrix}
+		2 \\
+		3 \\
+		0 \end{bmatrix}$,
+	$AU_3 = \begin{bmatrix}
+		2 \\
+		3 \\
+		1 \end{bmatrix}$ evaluate as directed in the following questions.
+
+	\begin{enumerate}
+		\item The value $\abs{U}$ is
+
+			\hfill(2006 - 5M, $-2$)
+
+			\begin{enumerate}
+				\item $3$
+				\item $-3$
+			\item $\frac{3}{2}$
+				\item $2$
+			\end{enumerate}
+
+		\item The sum of the elements of the matrix $U^-1$ is
+
+			\hfill(2006 - 5M, $-2$)
+
+			\begin{enumerate}
+				\item $-1$
+				\item $0$
+				\item $1$
+				\item $3$
+			\end{enumerate}
+
+		\item The value of $\begin{bmatrix} 3 & 2 & 0 \end{bmatrix}
+				\det{U}
+				\begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix}$ is
+
+			\hfill(2006 - 5M, $-2$)
+			\begin{enumerate}
+				\item $5$
+				\item $\frac{5}{2}$
+				\item $4$
+				\item $\frac{3}{2}$
+			\end{enumerate}
+	\end{enumerate}
+
+	\bigskip
+
+	{\centering PASSAGE - 2 \par}
+
+	\bigskip
+
+	Let $\mathcal{A}$ be the set of all $3\times3$ symmetric matrices all of whose entries are either 0 or 1. Five of these entries are $1$ and four of them are $0$.
+
+	\begin{enumerate}
+		\item The number of matrices in $\mathcal{A}$ is
+
+			\hfill(2009)
+
+			\begin{enumerate}
+				\item $12$
+				\item $6$
+				\item $9$
+				\item $3$
+			\end{enumerate}
+
+		\pagebreak
+
+		\item The number of matrices in $\mathcal{A}$ for which the system of linear equations
+			$$A\begin{bmatrix}x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$$
+			has a unique solution, is
+
+			\hfill(2009)
+
+			\begin{enumerate}
+				\item less than $4$
+				\item at least $4$ but less than $7$
+				\item at least $7$ but less than $10$
+				\item at least $10$
+			\end{enumerate}
+
+		\item The number of matrices $A$ in $\mathcal{A}$ for which the system of linear equations
+			$$A\begin{bmatrix}x \\ y \\ z\end{bmatrix}=\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}$$
+			is inconsistent, is
+
+			\hfill(2009)
+
+			\begin{enumerate}
+				\item $0$
+				\item more than $2$
+				\item $2$
+				\item $1$
+			\end{enumerate}
+	\end{enumerate}
+
+	\bigskip
+	\columnbreak
+
+	{\centering PASSAGE - 3 \par}
+
+	\bigskip
+
+	Let $p$ be an odd prime number and $T_p$ be the following set of $2\times2$ matrices :
+			$$T_p=\cbrak{A=\begin{bmatrix}a & b \\ c & d\end{bmatrix}:a,b,c\in\cbrak{0,1,2,\dots,p-1}}$$
+
+			\hfill(2010)
+	
+	\begin{enumerate}
+		\item The number of $A$ in $T_p$ such that $A$ is either symmetric or skew-symmetric or both, and det($A$) divisibly by $p$ is
+			\begin{enumerate}
+				\item $\brak{p-1}^2$
+				\item $2\brak{p-1}$
+				\item $\brak{p-1}^2+1$
+				\item $2p-1$
+			\end{enumerate}
+
+
+		\item The number of $A$ in $T_p$ such that the trace of $A$ is not divisible by p but det($A$) is divisible by $p$ is
+
+			\sbrak{\textbf{Note:} \text{The trace of a matrix is the sum of its diagonal entries.}}
+			
+			\begin{enumerate}
+				\item $\brak{p-1}\brak{p^2-p+1}$
+				\item $p^3-\brak{p-1}^2$
+				\item $\brak{p-1}^2$
+				\item $\brak{p-1}\brak{p^2-2}$
+			\end{enumerate}
+
+		\item The number of $A$ in $T_p$ such that det(A) is not divisible by $p$ is 
+			\begin{enumerate}
+				\item $2p^2$
+				\item $p^3-5p$
+				\item $p^3-3p$
+				\item $p^3-p^2$
+			\end{enumerate}
+
+	\end{enumerate}
+
+\end{multicols}
+
+
+\end{document}
