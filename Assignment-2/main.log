@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.8.5)  11 AUG 2024 00:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.8.5)  11 AUG 2024 23:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1472,26 +1472,26 @@ File: ts1txr.fd 2000/12/15 v3.1
 ] [2
 
 ]
-Overfull \hbox (85.13681pt too wide) in paragraph at lines 304--305
+Overfull \hbox (10.094pt too wide) in paragraph at lines 302--303
 []$[] []$ 
  []
 
 [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 326.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 326.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 326.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 326.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 326.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
  ) 
 Here is how much of TeX's memory you used:
- 27841 strings out of 481239
- 548961 string characters out of 5920378
- 836099 words of memory out of 5000000
- 42328 multiletter control sequences out of 15000+600000
- 593333 words of font info for 143 fonts, out of 8000000 for 9000
+ 27855 strings out of 481239
+ 549135 string characters out of 5920378
+ 836100 words of memory out of 5000000
+ 42340 multiletter control sequences out of 15000+600000
+ 598924 words of font info for 157 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  76i,12n,91p,472b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1502,7 +1502,7 @@ onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 58914 bytes).
+Output written on main.pdf (3 pages, 59596 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  118 compressed objects within 2 object streams
