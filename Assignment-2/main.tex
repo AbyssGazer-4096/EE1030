@@ -1,7 +1,7 @@
 %iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -24,14 +24,14 @@
 \usepackage{array}                                            
 \usepackage{longtable}                                       
 \usepackage{calc}                                             
-\usepackage{multirow}
-\usepackage{multicol}
+\usepackage{multirow}                                         
 \usepackage{hhline}                                           
 \usepackage{ifthen}                                           
 \usepackage{lscape}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{float}
+\usepackage{multicol}
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -51,14 +51,12 @@
 \begin{document}
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
-
 \title{ASSIGNMENT - 2
 
 SECTION-A | JEE ADVANCED / IIT-JEE}
 \author{EE24BTECH11019 - DWARAK A}
 
 \maketitle
-\newpage
 \bigskip
 
 \renewcommand{\thefigure}{\theenumi}
@@ -66,7 +64,7 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 
 \section*{E - SUBJECTIVE PROBLEMS}
 \bigskip
-
+\begin{multicols}{2}
 \begin{enumerate}
 	%1
 	\item Let $a>0$, $d>0$. Find the value of the determinant
@@ -92,12 +90,12 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 			a & b & c \\
 			b & c & a \\
 			c & a & b } $
-		where $a,b,c$ are real positive numbers, $abc=1$ and $\vec{A^T}\vec{A}=\vec{I}$, then find the value of $a^3+b^3+c^3$.
+		where $a,b,c$ are real positive numbers, $abc=1$ and $\vec{A}^\top\vec{A}=\vec{I}$, then find the value of $a^3+b^3+c^3$.
 
 		\hfill(2003 - 2 Marks)
 
 	%4
-	\item If $\vec{M}$ is a $3\times3$ matrix, where det $\vec{M}=1$ and $\vec{M}\vec{M^T}=\vec{I}$, where '$\vec{I}$' is an identity matrix, prove that det$(\vec{M}-\vec{I})=0$.
+	\item If $\vec{M}$ is a $3\times3$ matrix, where det $\vec{M}=1$ and $\vec{M}\vec{M}^\top=\vec{I}$, where '$\vec{I}$' is an identity matrix, prove that det$(\vec{M}-\vec{I})=0$.
 		
 		\hfill(2004 - 2 Marks)
 
@@ -122,12 +120,12 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 			x \\
 			y \\
 			z }$
-		and $\vec{AX}=\vec{U}$ has infinitely many solutions, prove that $\vec{BX}=\vec{V}$ has no unique solution. Also show that if afd $\neq0$, then $\vec{BX}=\vec{V}$ has no solution.
+		and $\vec{AX}=\vec{U}$ has infinitely many solutions, prove that $\vec{BX}=\vec{V}$ has no unique solution. Also show that if $afd$ $\neq0$, then $\vec{BX}=\vec{V}$ has no solution.
 
-		\hfill(2004 - 4 Marks)
 \end{enumerate}
+\end{multicols}
 
-\onecolumn
+%\onecolumn
 
 \section*{F - MATCH THE FOLLOWING}
 \bigskip
@@ -155,7 +153,7 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 		\begin{tabular}{p{12cm} p{3cm}}
 			Column I & Column II \\
 			(A) The minimum value of $\frac{x^2+2x+4}{x+2}$ is & (p) $0$ \\
-			(B) Let $\vec{A}$ and B be $3\times3$ matrices of real numbers, where $\vec{A}$ is symmetric, $\vec{B}$ is skew-symmetric and $(\vec{A}+\vec{B})(\vec{A}-\vec{B})=(\vec{A-B})(\vec{A+B})$. If $\vec{(AB)^t}=(-1)^k\vec{AB}$, where $\vec{(AB)^t}$ is the transpose of the matrix $\vec{AB}$, then the possible values of $k$ are & (q) $1$ \\
+			(B) Let $\vec{A}$ and B be $3\times3$ matrices of real numbers, where $\vec{A}$ is symmetric, $\vec{B}$ is skew-symmetric and $(\vec{A}+\vec{B})(\vec{A}-\vec{B})=(\vec{A-B})(\vec{A+B})$. If $\vec{(AB)}^\top=(-1)^k\vec{AB}$, where $\vec{(AB)}^\top$ is the transpose of the matrix $\vec{AB}$, then the possible values of $k$ are & (q) $1$ \\
 			(C) Let $a=\log_3\log_32$. An integer $k$ satisfying $1<2^{\brak{-k+3^{-a}}}<2$, must be less than & (r) $2$ \\
 			(D) If $\sin\theta=\cos\phi$, then the possible values of $\frac{1}{\pi}\brak{\theta\pm\phi-\frac{\pi}{2}} are $ & (s) $3$
 		\end{tabular}
@@ -163,11 +161,11 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 
 \bigskip
 
+\section*{G - COMPREHENSION BASED QUESTIONS}
+
+\bigskip
+
 \begin{multicols}{2}
-
-	\section*{G - COMPREHENSION BASED QUESTIONS}
-
-	\bigskip
 
 	{\centering PASSAGE - 1 \par}
 
@@ -240,21 +238,6 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 			\hfill(2009)
 
 			\begin{enumerate}
-				\item $12$
-				\item $6$
-				\item $9$
-				\item $3$
-			\end{enumerate}
-
-		\pagebreak
-
-		\item The number of matrices in $\mathcal{A}$ for which the system of linear equations
-			$$\vec{A}\myvec{x \\ y \\ z } = \myvec{ 1 \\ 0 \\ 0 }$$
-			has a unique solution, is
-
-			\hfill(2009)
-
-			\begin{enumerate}
 				\item less than $4$
 				\item at least $4$ but less than $7$
 				\item at least $7$ but less than $10$
@@ -276,7 +259,6 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 	\end{enumerate}
 
 	\bigskip
-	\columnbreak
 
 	{\centering PASSAGE - 3 \par}
 
@@ -299,7 +281,7 @@ SECTION-A | JEE ADVANCED / IIT-JEE}
 
 		\item The number of $\vec{A}$ in $\vec{T_p}$ such that the trace of $\vec{A}$ is not divisible by $p$ but det($\vec{A}$) is divisible by $p$ is
 
-			\sbrak{\text{\parbox{8cm}{\textbf{Note: }The trace of a matrix is the sum of its diagonal entries.}}}
+			\sbrak{\text{\parbox{7.5cm}{\textbf{Note: }The trace of a matrix is the sum of its diagonal entries.}}}
 			
 			\begin{enumerate}
 				\item $\brak{p-1}\brak{p^2-p+1}$
