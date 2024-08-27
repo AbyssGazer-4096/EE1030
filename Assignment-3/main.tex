@@ -41,9 +41,8 @@
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
 
-\title{10.5.3.9}
-\author{EE23BTECH11063 - Vemula Siddhartha
-}
+\title{1.5.37}
+\author{EE24BTECH11019 - DWARAK A}
 % \maketitle
 % \newpage
 % \bigskip
@@ -59,91 +58,44 @@
 \renewcommand{\thetable}{\theenumi}
 
 
-\textbf{Question}:\\
-If the sum of first 7 terms of an AP is 49 and that of 17 terms is 289, find the sum of
-first n terms.
+\textbf{Question}:
+\\
+The centre of a circle whose end points of a diameter are \brak{-6, 3} and \brak{6, 4} is \underline{\hspace{1cm}} .
+
 \\
 \textbf{Solution: }
 \begin{table}[h!]    
   \centering
   \input{tables/table.tex}
   \caption{Variables Used}
-  \label{tab10.5.3.9.1}
+  \label{tab1.5.37.1}
 \end{table}
+
+Center of a circle divides its diameter in the ration $1:1$ internally.\\
+
+Section Formula :
 \begin{align}
-y\brak{n}&=\frac{n+1}{2}\,\brak{2x\brak{0}+nd}\,u\brak{n}\label{eq10.5.3.9.1}\\
-y\brak{6}&=49\\
-y\brak{16}&=289
+    \vec{C}=\frac{k\vec{B}+\vec{A}}{k+1}\label{eq1.5.37.1}
 \end{align}
-Then,
+Here,
 \begin{align}
-x\brak{0}+3d&=7\label{eq10.5.3.9.2}\\
-x\brak{0}+8d&=17 \label{eq10.5.3.9.3}
+    k=1\label{eq1.5.37.2}
 \end{align}
-From  equations \ref{eq10.5.3.9.2} and \ref{eq10.5.3.9.3}, the augmented matrix is:
+From  equations \ref{eq1.5.37.1} and \ref{eq1.5.37.2}, the vector $\vec{C}$ is:
 \begin{align}
- \myvec{
-   1 & 3 & 7
-   \\
-   1 & 8 & 17
- }
- \xleftrightarrow[]{R_2 \leftarrow {R_2-R_1}}
- \myvec{
-   1 & 3 & 7
-   \\
-   0 & 5 & 10
- }
- \\
- \xleftrightarrow[]{R_1 \leftarrow {R_1-\frac{3}{5}R_2}}
- \myvec{
-   1 & 0 & 1
-   \\
-   0 & 5 & 10
- }
- \\
- \xleftrightarrow[]{R_2 \leftarrow \frac{R_2}{5}}
- \myvec{
-   1 & 0 & 1
-   \\
-   0 & 1 & 2
- }
- \\
- \implies \myvec{
-   x\brak{0}
-   \\
-   d
- }
- =
- \myvec{
-   1
-   \\
-   2
- }
+    \vec{C}&=\frac{\vec{A}+\vec{B}}{2}\\
+    \vec{C}&=\frac{\myvec{-6\\3}+\myvec{6\\4}}{2}\\
+    \vec{C}&=\frac{\myvec{0\\7}}{2}\\
+    \vec{C}&=\myvec{0\\3.5}
 \end{align}
-\begin{align}
-    x\brak{n}&= \brak{1+2n}u\brak{n}\\
-    X\brak{z}&=\frac{1}{1-z^{-1}}+\frac{2z^{-1}}{\brak{1-z^{-1}}^2}\;\;\cbrak{z\in\mathbb{C}: |z|>1}
-\end{align}
-\begin{align}
-   y\brak{n}&=x\brak{n}*u\brak{n}\\
-   Y\brak{z}&=X\brak{z}\,U\brak{z}\\
-   \implies Y\brak{z}&=\brak{\frac{1}{1-z^{-1}}+\frac{2z^{-1}}{\brak{1-z^{-1}}^2}}\brak{\frac{1}{1-z^{-1}}}\\
-   &=\frac{1}{\brak{1-z^{-1}}^2}+\frac{2z^{-1}}{\brak{1-z^{-1}}^3}\\
-   \brak{n+1}u\brak{n}&\system{Z}\frac{1}{\brak{1-z^{-1}}^2}\cbrak{z\in\mathbb{C}: |z|>1}\\
-   n\brak{\brak{n+1}u\brak{n}}&\system{Z}\frac{2z^{-1}}{\brak{1-z^{-1}}^3}\cbrak{z\in\mathbb{C}: |z|>1}
-\end{align}
-   From equations \eqref{eq:uzder-shift} and \eqref{eq:uzder-der}, taking the inverse Z Transform,
-   \begin{align}
-   y\brak{n}&=\brak{n+1}u\brak{n}+n\brak{\brak{n+1}u\brak{n}}\\
-   \implies y\brak{n}&=\brak{n+1}^2\,u\brak{n}
-\end{align}
+
+The coordinates of the center of the circle $\vec{C}$ is $\myvec{0\\3.5}$
+
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=0.7\linewidth]{figs/Figure_1.png}
-   \caption{Stem Plot of y\brak{n}}
+   \includegraphics[width=1\linewidth]{figs/plot.png}
+   \caption{Plot of end-points of diameter $\vec{A}$ and $\vec{B}$ and center of circle $\vec{C}$}
    \label{stemplot}
 \end{figure}
-\end{document}  
 \end{document}
-
-
+\end{document}
