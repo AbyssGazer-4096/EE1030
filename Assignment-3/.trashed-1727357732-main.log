@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  27 AUG 2024 13:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  27 AUG 2024 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1946,7 +1946,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
-<figs/plot.png, id=33, 462.528pt x 346.896pt>
+
+LaTeX Warning: Reference `eq1.5.37.1' on page 1 undefined on input line 83.
+
+
+LaTeX Warning: Reference `eq1.5.37.2' on page 1 undefined on input line 83.
+
+<figs/plot.png, id=31, 462.528pt x 346.896pt>
 File: figs/plot.png Graphic file (type png)
 <use figs/plot.png>
 Package pdftex.def Info: figs/plot.png  used on input line 95.
@@ -1958,6 +1964,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ] [2 <./figs/plot.png>]
 (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
@@ -1976,10 +1988,10 @@ t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 76212 bytes).
+Output written on main.pdf (2 pages, 77106 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  11 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
