@@ -1,24 +1,29 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from ctypes import *
 
-file_path = 'points.txt'
+secForm = CDLL('./secForm.so')
+
+x1 = -6
+y1 = 3
+x2 = 6
+y2 = 4
+k = 1
+
+secn = secForm.secForm
+secn.restype = c_float
+
+x = secn(c_float(x1), c_float(x2), c_float(k))
+y = secn(c_float(y1), c_float(y2), c_float(k))
+print(x, y)
+
+X = [x1, x2, x]
+Y = [y1, y2, y]
 
 # Lists to store x and y coordinates
-x = []
-y = []
-
-# Read the coordinates from the file
-with open(file_path, 'r') as file:
-    for line in file:
-        # Split the line into x and y values using space as the delimiter
-        values = line.split()  # By default, split() uses whitespace as the delimiter
-        # Convert values to float and append to lists
-        x.append(float(values[0]))
-        y.append(float(values[1]))
-
-A = np.array([x[0], y[0]]).reshape(-1, 1)
-B = np.array([x[1], y[1]]).reshape(-1, 1)
-C = np.array([x[2], y[2]]).reshape(-1, 1)
+A = np.array(([x1, y1])).reshape(-1, 1)
+B = np.array(([x2, y2])).reshape(-1, 1)
+C = np.array(([x, y])).reshape(-1, 1)
 
 txtA = str('A' + str(tuple(A.flatten())))
 txtB = str('B' + str(tuple(B.flatten())))
@@ -44,12 +49,14 @@ def plot_circle(center, point_on_circle):
     # Plot the circle 
     plt.plot(x_circle, y_circle, label='Circle')
 
-# Plot the coordinates
+# Plot the Circle
 plot_circle(C, A)
-plt.plot(x, y, linestyle='-', c = 'b') # Customize color, linestyle, etc.
+plt.plot(X, Y, linestyle='-', c = 'b') # Plotting Diameter
 
-for i in range(len(x)):
-    plt.scatter(x[i], y[i], color=colors[i], label=labels[i])
+
+# Plotting Points
+for i in range(len(X)):
+    plt.scatter(X[i], Y[i], color=colors[i], label=labels[i])
 
 plt.annotate(txtA, xy = A)
 plt.annotate(txtB, xy = B)
