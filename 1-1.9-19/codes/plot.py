@@ -33,6 +33,8 @@ plt.scatter(B[0], B[1], c = 'y', label = txtB)
 plt.annotate(txtA1, xy = A1)
 plt.annotate(txtA2, xy = A2)
 plt.annotate(txtB, xy = B)
+plt.annotate("10 units", xy = (A1+B)/2)
+plt.annotate("10 units", xy = (A2+B)/2)
 
 plt.xlabel('X-axis')
 plt.ylabel('Y-axis')
