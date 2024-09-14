@@ -70,24 +70,18 @@ Find the values of $x$ for which the distance between the points $\vec{A}(x, 2)$
 \end{table}
 Distance formula :
 \begin{align}
-	d&=\norm{A-B} \\
-	d&=\sqrt{\norm{A}^2-2A^\top B+\norm{B}^2} \\
-	d^2&=\norm{A}^2-2A^\top B+\norm{B}^2
+    \norm{A-B}&=d \\
+    \sqrt{\norm{A}^2-2A^\top B+\norm{B}^2}&=d \\
+    \norm{A}^2-2A^\top B+\norm{B}^2&=d^2
 \end{align}
 Substituting values,
 \begin{align}
-	10^2&=\myvec{x&2}\myvec{x\\2}-2\myvec{x&2}\myvec{9\\8}+\myvec{9&8}\myvec{9\\8} \\
-	100&=(x^2+4)-2(9x+16)+(81+64)
-\end{align}
-\begin{align}
+    \myvec{x&2}\myvec{x\\2}-2\myvec{x&2}\myvec{9\\8}+\myvec{9&8}\myvec{9\\8}&=10^2 \\
+    (x^2+4)-2(9x+16)+(81+64)&=100 \\
 	x^2-18x+17&=0 \\
-	(x-17)(x-1)&=0
-\end{align}
-\begin{align}
-	x_1&=17, x_2=1
-\end{align}
-\begin{align}
-    \implies A_1&=\myvec{17\\2}, A_2=\myvec{1\\2}
+	(x-17)(x-1)&=0 \\
+    x_1=17, x_2&=1 \\
+    \implies A_1=\myvec{17\\2}, A_2&=\myvec{1\\2}
 \end{align}
 \begin{figure}[ht!]
 	\centering
