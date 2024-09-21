@@ -59,34 +59,46 @@
 
 
 \textbf{Question}:
-Construct a triangle if its perimeter is $10.4cm$ and two angles are $45\degree$ and $120\degree$, and give justification.
+Construct a triangle $\triangle\vec{ABC}$ if its perimeter is $10.4cm$ and two angles are $45\degree$ and $120\degree$, and give justification.
 
 \solution
 \begin{table}[h!]    
   \centering
   \input{tables/table.tex}
   \caption{Variables Used}
-  \label{tab1.9.19.1}
+  \label{tab3.2.19.1}
 \end{table}
-Distance formula :
 \begin{align}
-    \norm{A-B}&=d \\
-    \sqrt{\norm{A}^2-2A^\top B+\norm{B}^2}&=d \\
-    \norm{A}^2-2A^\top B+\norm{B}^2&=d^2
+    a+b+c&=K \\
+    b\cos{C}+c\cos{B}-a&=0 \\
+    b\sin{C}-c\sin{B}&=0
+\end{align}
+Resulting in the matrix equation,
+\begin{align}
+    \myvec{1&1&1\\-1&\cos{C}&\cos{B}\\0&\sin{C}&-\sin{B}}\myvec{a\\b\\c}=K\myvec{1\\0\\0}
+\end{align}
+Augmented matrix,
+\begin{align}
+    \myvec{1&1&1&1\\-1&\cos{C}&\cos{B}&0\\0&\sin{C}&-\sin{B}&0}
+\end{align}
+Row-Reduction,
+\begin{align}
+    \myvec{1&0&0&\frac{\sin{\brak{B+C}}}{\sin{B}+\sin{C}+\sin{\brak{B+C}}}\\0&1&0&\frac{\sin{B}}{\sin{B}+\sin{C}+\sin{\brak{B+C}}}\\0&0&1&\frac{\sin{C}}{\sin{B}+\sin{C}+\sin{\brak{B+C}}}}
 \end{align}
 Substituting values,
 \begin{align}
-    \myvec{x&2}\myvec{x\\2}-2\myvec{x&2}\myvec{9\\8}+\myvec{9&8}\myvec{9\\8}&=10^2 \\
-    (x^2+4)-2(9x+16)+(81+64)&=100 \\
-	x^2-18x+17&=0 \\
-	(x-17)(x-1)&=0 \\
-    x_1=17, x_2&=1 \\
-    \implies A_1=\myvec{17\\2}, A_2&=\myvec{1\\2}
+    \myvec{a\\b\\c}&=k\myvec{\frac{\sin{\brak{B+C}}}{\sin{B}+\sin{C}+\sin{\brak{B+C}}}\\\frac{\sin{B}}{\sin{B}+\sin{C}+\sin{\brak{B+C}}}\\\frac{\sin{C}}{\sin{B}+\sin{C}+\sin{\brak{B+C}}}} \\
+    \myvec{a\\b\\c}&=10.4\myvec{\frac{\sqrt{3}-1}{\sqrt{6}+\sqrt{3}+1}\\\frac{\sqrt{3}-1}{\sqrt{6}+\sqrt{3}+1}\\\frac{\sqrt{3}-1}{\sqrt{6}+\sqrt{3}+1}} \\
+    \myvec{a\\b\\c}&=\myvec{1.4693\\4.0142\\4.9164}
+\end{align}
+Sides of $\triangle\vec{ABC}$,
+\begin{align}
+    \implies a=1.4693cm, b=4.0142cm, c=4.9164cm
 \end{align}
 \begin{figure}[ht!]
 	\centering
-   	\includegraphics[width=0.8\linewidth]{figs/plot.png}
-   	\caption{Plot of points $\vec{A_1}$ and $\vec{A_2}$ at a distance of $10$ units from $\vec{B}$}
+   	\includegraphics[width=0.8\linewidth]{figs/fig.png}
+   	\caption{Triangle with $\angle B=45\degree$, $\angle C=120\degree$ and Perimeter = $10.4cm$}
 \label{Plot}
 \end{figure}
 \end{document}
