@@ -1,7 +1,15 @@
-%iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -17,10 +25,10 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} 
 \usepackage{listings}
-\usepackage{gvv}                                        
-%\def\inputGnumericTable{}                                 
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
 \usepackage[latin1]{inputenc}                                
-\usepackage{color}                                            
+\usepackage{color}
 \usepackage{array}                                            
 \usepackage{longtable}                                       
 \usepackage{calc}                                             
@@ -28,209 +36,294 @@
 \usepackage{hhline}                                           
 \usepackage{ifthen}                                           
 \usepackage{lscape}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{float}
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{problem}{Problem}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{Definition}
-\newcommand{\BEQA}{\begin{eqnarray}}
-\newcommand{\EEQA}{\end{eqnarray}}
-\newcommand{\define}{\stackrel{\triangle}{=}}
-\theoremstyle{remark}
-\newtheorem{rem}{Remark}
-
-% Marks the beginning of the document
+\usepackage{tikz}
+\usetikzlibrary{patterns}
 \begin{document}
+
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
 
-\title{\textbf{ASSIGNMENT-1\\GATE XE-2007}}
-\author{EE24BTECH11019 - Dwarak A}
+\title{\textbf{ASSIGNMENT-2\\GATE XE-2008}}
+\author{EE24BTECH11019 - DWARAK A}
 \maketitle
-\newpage
+
 \bigskip
 
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 
-\section*{Q.1-Q.6 CARRY ONE MARK EACH.}
+\section*{C : ELECTRICAL SCIENCES}
 
 \bigskip
 
 \begin{enumerate}
-    %1
-    \item Let $M=\myvec{1&1&1 \\ 0&1&1 \\ 0&0&1}$. Then the maximum number of linearly independent eigenvectors of $M$ is
-        \begin{enumerate}
-            \item $0$
-            \item $1$
-            \item $2$
-            \item $3$
-        \end{enumerate}
-    
-    %2
-    \item Let $L=\lim\limits_{x\to\frac{\pi}{2}}\frac{\sin^22x}{\brak{x-\frac{\pi}{2}}^2}$. Then $L$ is equal to
-        \begin{enumerate}
-            \item $-4$
-            \item $0$
-            \item $2$
-            \item $4$
-        \end{enumerate}
-    
-    %3
-    \item Let $f(z)=\frac{1}{1-z^2}$. The coefficient $\frac{1}{z-1}$ in the Laurent expansion of $f(z)$ about $z=1$ is
-        \begin{enumerate}
-            \item $-1$
-            \item $-\frac{1}{2}$
-            \item $\frac{1}{2}$
-            \item $1$
-        \end{enumerate}
 
-    %4
-    \item Let $u(x,t)$ be the solution of the initial value problem
-
-        $\frac{\partial^2u}{\partial t^2}=9\frac{\partial^2u}{\partial x^2},t>0,-\infty<x<\infty$,
-
-        $u(x,0)=x+5$,
-
-        $\frac{\partial u}{\partial t}(x,0)=0$.
-
-        Then $u(2,2)$ is
-        \begin{enumerate}
-            \item $7$
-            \item $13$
-            \item $14$
-            \item $26$
-        \end{enumerate}
-
-    %5
-    \item Two students take a test consisting of five TRUE/FALSE questions. To pass the test the students the students have to answer at least three questions correctly. Both of them know the correct answers to two questions and guess the answers to the remaining three. The probability that only one student passes the test is equal to
-        \begin{enumerate}
-            \item $\frac{6}{32}$
-            \item $\frac{7}{32}$
-            \item $\frac{1}{4}$
-            \item $\frac{3}{4}$
-        \end{enumerate}
-
-    %6
-    \item The equation $g(x)=x$ is solved by Newton-Raphson iteration method, starting with an initial approximation $x_0$ near the simple root $\alpha$. If $x_{n+1}$ is the approximation to $\alpha$ at the $(n+1)^{th}$ iteration, then
-        \begin{enumerate}
-            \item $x_{n+1}=\frac{x_ng^\prime(x_n)-g(x_n)}{1-g^\prime(x_n)}$
-            \item $x_{n+1}=\frac{x_ng^\prime(x_n)-g(x_n)}{g^\prime(x_n)-1}$
-            \item $x_{n+1}=g(x_n)$
-            \item $x_{n+1}=\frac{x_ng^\prime(x_n)-g(x_n)+2x_n}{g^\prime(x_n)+1}$
-        \end{enumerate}
-
-\bigskip
-
-\section*{Q.7-Q.24 CARRY TWO MARKS EACH.}
-
-\bigskip
-
-    %7
-    \item Let $Ax=b$ be a system of $m$ linear equations in $n$ unknowns with $m<n$ and $b\neq0$. Then the system has
-        \begin{enumerate}
-            \item $n-m$ solutions
-            \item either zero or infinitely many solutions
-            \item exactly one solution
-            \item $n$ solutions
-        \end{enumerate}
-
-
-    %8
-    \item Let $R$ be an $n\times n$ nonsingular matrix. Let $P$ and $Q$ be two $n\times n$ matrices that $Q=R^{-1}PR$. If $x$ is an eigenvector of $P$ corresponding to a nonzero eigenvalue $\lambda$ of $P$, then
-        \begin{enumerate}
-            \item $Rx$ is an eigenvector of $Q$ corresponding to the eigenvalue $\lambda$ of $Q$
-            \item $Rx$ is an eigenvector of $Q$ corresponding to the eigenvalue $\frac{1}{\lambda}$ of $Q$
-            \item $R^{-1}x$ is an eigenvector of $Q$ corresponding to the eigenvalue $\frac{1}{\lambda}$ of $Q$
-            \item $R^{-1}x$ is an eigenvector of $Q$ corresponding to the eigenvalue $\lambda$ of $Q$
-        \end{enumerate}
-
-
-    %9
-    \item Let $M$ be a $2\times 2$ matrix with eigenvalues $1$ and $2$. Then $M^{-1}$ is
-        \begin{enumerate}
-            \item $\frac{M-3I}{2}$
-            \item $\frac{3I+M}{2}$
-            \item $\frac{3I-M}{2}$
-            \item $\frac{-M-3I}{2}$
-        \end{enumerate}
-
-    %10
-    \item The number $n\times n$ matrices that are simultaneously Hermitian, unitary and diagonal is
-        \begin{enumerate}
-            \item $2^n$
-            \item $n^2$
-            \item $2n$
-            \item $2$
-        \end{enumerate}
-
-    %11
-    \item Let $M=\myvec{1&b&a \\ 0&2&c \\ 0&0&1}$, where $a,b,c$ are real numbers. Then $M$ is diagonalizable
-        \begin{enumerate}
-            \item for all values of $a,b,c$
-            \item only when $bc\neq a$
-            \item only when $b+c=a$
-            \item only when $bc=a$
-        \end{enumerate}
-
-    %12
-    \item The maximum value of the function $2x+3y+4z$ on the ellipsoid $2x^2+3y^2+4z^2=1$ is
-        \begin{enumerate}
-            \item $2$
-            \item $3$
-            \item $6$
-            \item $9$
-        \end{enumerate}
-
-    %13
-    \item Let $f:\mathcal{R}\to\mathcal{R}$ be a twice differentiable real valued function such that $f\brak{\frac{1}{n}}=1$ for $n=1,2,3\dots$. Then
-        \begin{enumerate}
-            \item $f^\prime(0)=0$
-            \item $f^\prime(0)=1$
-            \item $0<f^\prime(0)<1$
-            \item $f^\prime(0)>1$
-        \end{enumerate}
-
-    %14
-    \item Let $f(x)=\int\limits_0^{x^2}\sin\sqrt{t}dt$ for $x\geq0$. Then $f^\prime\brak{\frac{\pi}{2}}$ is equal to
-        \begin{enumerate}
-            \item $0$
-            \item $\pi$
-            \item $1$
-            \item $\frac{\pi}{2}$
-        \end{enumerate}
-
-    %15
-    \item The value of the contour integral $\oint\limits_{\abs{z}=1}\frac{\cosh{z}}{4z^2+1}dz$ is equal to
-        \begin{enumerate}
-            \item $2\pi\cosh\brak{\frac{i}{2}}$
-            \item $\pi\cosh\brak{\frac{i}{2}}$
-            \item $0$
-            \item $2\pi i$
-        \end{enumerate}
-
-    %16
-    \item Let $f(x+iy)=u(x,y)+iv(x,y)$ be an analytic function defined on the complex plane satisfying $2u^2+3v^2=1$. Then
-        \begin{enumerate}
-            \item $f$ is a constant
-            \item $f(z)=kz$ for some nonzero real number $k$
-            \item $u(x,y)=\frac{\cos(x+y)}{\sqrt{2}}$
-            \item $v(x,y)=\frac{\sin(x-y)}{\sqrt{3}}$
-        \end{enumerate}
+\subsection*{Q.9 to Q.30 carry two marks each.}
 
     %17
-    \item The value of $\oint\limits_{C}\brak{xy^2+2x}dx+\brak{x^2y+4x}dy$ along the circle $C:x^2+y^2=4$ in the anticlockwise direction is
+    \item In an induction motor the phase-difference, $\phi$, between the voltage applied at the stator terminals and the magnetizing current is
         \begin{enumerate}
-            \item $-16\pi$
-            \item $-4\pi$
-            \item $4\pi$
-            \item $16\pi$
+            \item $\phi=0^\degree$
+            \item $0^\degree<\phi<90^\degree$
+            \item $\phi=90^\degree$
+            \item $90^\degree<\phi<180^\degree$
+        \end{enumerate}
+    
+    %18
+    \item A voltage of $+5V$ is applied (with respect to ground) to both the inputs $V_1$ and $V_2$ of an operational amplifier circuit shown in the figure. $R_1=20k\ohm$ and $R_2=10k\ohm$. The output voltage, $V_o$ is
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig1.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $-5V$
+            \item $0V$
+            \item $5V$
+            \item $20V$
+        \end{enumerate}
+    
+    %19
+    \item A pair of zener diodes each with a forward drop of $0.7V$ and a zener voltage of $4.7V$ is connected as shown in the figure. The input voltage is $v_{in}=10sin(2t)$. The peak-to-peak output voltage, $v_o$, is
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig2.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $5.4V$
+            \item $4.7V$
+            \item $1.4V$
+            \item $0.7V$
+        \end{enumerate}
+
+    %20
+    \item The npn transistor shown in figure has $h_{fe}=99$ and $V_{BE}=0.7V$. Under quiescent condition, $V_{EG}=4.3V$ and $I_{E}=1mA$, and the current in $R_2$ is $0.1 mA$. The value of $R_1$, required for biasing the circuit is
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig3.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $10.1k\ohm$
+            \item $90.9k\ohm$
+            \item $100.1k\ohm$
+            \item $150.2k\ohm$
+        \end{enumerate}
+
+    %21
+    \item The forward characteristics of a p-n diode is given by $i=I_{s}e^{\frac{v}{\brak{nV_{T}}}}$ with $n=2$ and $V_{T}=25mV$. If the diode current is measured to be $100mA$ at $0.7V$ drop, the diode power dissipation at a diode current of $200mA$ is 
+        \begin{enumerate}
+            \item $70mW$
+            \item $140mW$
+            \item $143mW$
+            \item $147mW$
+        \end{enumerate}
+
+    %22
+    \item For the n-channel JFET shown in the figure the pinch-off voltage, $V_{p}=-5V$, and gate source voltage, $V_{GS}=-3V$. The minimum required drain to source voltage, $V_{DS}$ to operate at pinch-off condition is
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig4.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $0V$
+            \item $2V$
+            \item $5V$
+            \item $8V$
+        \end{enumerate}
+
+    %23
+    \item The Boolean function corresponding to the truth table shown is
+        \begin{table}[!ht]
+            \centering
+            \input{tables/table1.tex}
+        \end{table}
+        \begin{enumerate}
+            \item $F=A\overline{B}C+\overline{A}BC+\overline{AB}C+\overline{ABC}$
+            \item $F=ABC+AB\overline{C}+\overline{A}BC$
+            \item $F=ABC+AB\overline{C}+A\overline{BC}+\overline{A}B\overline{C}$
+            \item $F=A\overline{B}C+\overline{A}BC+\overline{AB}C+\overline{A}BC$
+        \end{enumerate}
+
+    %24
+    \item The decimal number $328$ when converted to the base of $9$ is equivalent to 
+        \begin{enumerate}
+            \item $(434)_9$
+            \item $(424)_9$
+            \item $(404)_9$
+            \item $(304)_9$
+        \end{enumerate}
+
+    %25
+    \item The following logic circuit can be represented by the Boolean expression
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig5.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $F=\overline{B}+BC+\overline{C}$
+            \item $F=\overline{B}+\overline{C}$
+            \item $F=\brak{\overline{B+C}}$
+            \item $F=\overline{A}+\overline{B}+\overline{C}$
+        \end{enumerate}
+
+    %26
+    \item A $4$-bit resistor network based D/A converter is shown in the figure. The output corresponding to the number $1010$ is
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig6.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $5.0V$
+            \item $6.25V$
+            \item $7.25V$
+            \item $10.0V$
+        \end{enumerate}
+
+    %27
+    \item Two $10V$ square waves of same frequency but $90^\degree$ out-of-phase to each other are applied to $X$ and $Y$ deflecting plates of a CRO. Both channels are set at $5V$/division and the CRO is operating in the $X-Y$ mode. The display on CRO will be 
+        \begin{enumerate}
+            \item A bright circle
+            \item A bright ellipse
+            \item Two bright spots at the diagonal of a faint square
+            \item Four bright spots at the comers of a faint square
+        \end{enumerate}
+
+    %28
+    \item CRO that is used in $X-Y$ mode displays a line inclined at an angle of $135^\degree$. The $X$-channel gain is $5V$/division and the $Y$-channel gain is $10V$/division. If the display point at a given instant corresponds to $+3$ divisions on the $X$-axis, the input voltage to the $Y$-channel at that instant is 
+        \begin{enumerate}
+            \item $-30V$
+            \item $-15V$
+            \item $+15V$
+            \item $+30V$
+        \end{enumerate}
+
+\subsection*{Common Data Questions}
+
+Common Data for Questions 29 and 30:
+
+A $1.0kW$ induction motor has $15$ pole-pairs and is supplied from a $60Hz$ source. The motor runs at $0.05$ slip. The stator loss is $80W$.
+    
+    %29
+    \item The speed of the rotating magnetic field in the motor and the frequency of the rotor induced voltage are
+        \begin{enumerate}
+            \item $120rpm, 1.5Hz$
+            \item $120rpm, 28.5Hz$
+            \item $240rpm, 3.0Hz$
+            \item $240rpm, 57.0Hz$
+        \end{enumerate}
+
+    %30
+    \item The rotor copper loss of this induction motor is
+        \begin{enumerate}
+            \item $120rpm, 1.5Hz$
+            \item $120rpm, 28.5Hz$
+            \item $240rpm, 3.0Hz$
+            \item $240rpm, 57.0Hz$
+        \end{enumerate}
+
+\subsection*{Linked Answer Questions: Q.31 to Q.34 carry two marks each.}
+
+Statement for Linked Answer Questions 31 and 32:
+
+A practical dc voltage source is represented as an ideal dc voltage source in series with an internal resistance. The $V-I$ characteristics of two such sources, $E_1$ and $E_2$, are shown in the figure.
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig7.tex}
+        \end{figure}
+
+    %31
+    \item The respective internal resistances of $E_1$ and $E_2$ are
+        \begin{enumerate}
+            \item $20\ohm,8\ohm$
+            \item $5\ohm,2\ohm$
+            \item $8\ohm,20\ohm$
+            \item $2\ohm,5\ohm$
+        \end{enumerate}
+
+    %32
+    \item If the two sources, $E_1$ and $E_2$, in question Q.31 are connected in parallel to feed a load of $200\ohm$ resistance, then the load current is in the range 
+        \begin{enumerate}
+            \item $0.0A$ to $0.5A$
+            \item $0.5A$ to $2.0A$
+            \item $2.0A$ to $4.0A$
+            \item $4.0A$ to $8.0A$
+        \end{enumerate}
+
+Statement for Linked Answer Questions 33 and 34:
+
+A function $F$, in "Sum of Product (SOP)" form is described by $$F=\sum m(0,1,3,4,5,6,7,13,15)$$
+
+    %33
+    \item The Karnaugh Map for $F$ is given by ($X$ being don't care)
+        \begin{enumerate}
+            \item $$
+                \begin{array}{|c|c|c|c|c|}
+                \hline
+                AB \setminus CD & 00 & 01 & 11 & 10 \\
+                \hline
+                00 & X & X & X & 1 \\
+                \hline
+                01 & X & X & X & X \\
+                \hline
+                11 & 1 & X & X & 1 \\
+                \hline
+                10 & 1 & 1 & 1 & 1 \\
+                \hline
+            \end{array}
+            $$
+            \item $$
+                \begin{array}{|c|c|c|c|c|}
+                \hline
+                AB \setminus CD & 00 & 01 & 11 & 10 \\
+                \hline
+                00 & 1 & 1 & 1 & X \\
+                \hline
+                01 & 1 & 1 & 1 & 1 \\
+                \hline
+                11 & X & 1 & 1 & x \\
+                \hline
+                10 & X & X & X & X \\
+                \hline
+            \end{array}
+            $$
+            \item $$
+                \begin{array}{|c|c|c|c|c|}
+                \hline
+                AB \setminus CD & 00 & 01 & 11 & 10 \\
+                \hline
+                00 & 1 & X & 1 & X \\
+                \hline
+                01 & X & 1 & X & 1 \\
+                \hline
+                11 & 1 & X & X & X \\
+                \hline
+                10 & X & 1 & X & 1 \\
+                \hline
+            \end{array}
+            $$
+            \item $$
+                \begin{array}{|c|c|c|c|c|}
+                \hline
+                AB \setminus CD & 00 & 01 & 11 & 10 \\
+                \hline
+                00 & 1 & 1 & X & X \\
+                \hline
+                01 & X & X & X & X \\
+                \hline
+                11 & X & 1 & 1 & 1 \\
+                \hline
+                10 & X & 1 & 1 & X \\
+                \hline
+            \end{array}
+            $$
+        \end{enumerate}
+
+    %34
+    \item Using the Karnaugh Map obtained in question Q.33, the function, $F$ reduces to 
+        \begin{enumerate}
+            \item $F=\overline{AC}+\overline{A}D+AB+BD$
+            \item $F=AC+AD+\overline{AB}+\overline{BD}$
+            \item $F=AC+\overline{A}D+\overline{AB}+\overline{BD}$
+            \item $F=\overline{AC}+\overline{A}D+\overline{A}B+BD$
         \end{enumerate}
 
 \end{enumerate}

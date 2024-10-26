@@ -1,0 +1,20 @@
+\resizebox{0.25\textwidth}{!}{
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw (13,14) to[Tnpn, transistors/scale=1.19] (13,16.5);
+\draw (13,15.75) node[right] {$C$};
+\draw (12.25,15.25) node[above] {$B$};
+\draw (13,14.75) node[right] {$E$};
+\draw (10.5,16.5) to[R,l={$R_2$}] (10.5,18);
+\draw (10.5,14) to[R,l={$R_2$}] (10.5,12.5);
+\draw (13,16.5) to[R,l={$R_C$}] (13,18);
+\draw (13,14) to[R,l={$R_E$}] (13,12.5);
+\draw (10.5,12.5) to[short] (13,12.5);
+\draw (10.5,18) to[short] (13,18);
+\draw (11.75,18) to[short, -o] (11.75,18.5) node[right] {$15V$};
+\draw (11.75,12.5) to (11.75,12) node[ground]{} node[right] {$G$};
+\draw (10.5,16.5) to[short] (10.5,14);
+\draw (12,15.25) to[short] (10.5,15.25);
+\draw[->] (12.5,14) -- (12.5,13) node[midway,left] {$I_E$};
+\end{circuitikz}
+}

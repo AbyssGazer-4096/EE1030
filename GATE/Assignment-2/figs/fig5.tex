@@ -1,0 +1,38 @@
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (8,11.25) to[short] (8.25,11.25);
+\draw (8,10.75) to[short] (8.25,10.75);
+\draw (8.25,11.25) node[ieeestd nor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,11);
+\draw (8,8.75) to[short] (8.25,8.75);
+\draw (8,8.25) to[short] (8.25,8.25);
+\draw (8.25,8.75) node[ieeestd and port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (10,8.5);
+\draw (11,11) to[short] (11.25,11);
+\draw (11,10.5) to[short] (11.25,10.5);
+\draw (11.25,11) node[ieeestd xnor port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (13,10.75);
+\draw (11.25,8.5) node[ieeestd not port, anchor=in](port){} (port.out) to[short] (13,8.5);
+\draw (port.in) to[short] (11,8.5);
+\draw (14.5,10) to[short] (14.75,10);
+\draw (14.5,9.5) to[short] (14.75,9.5);
+\draw (14.75,10) node[ieeestd or port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (16.5,9.75);
+\draw [ line width=0.2pt](10,11) to[short] (11,11);
+\draw [ line width=0.2pt](13,10.75) to[short] (13.75,10.75);
+\draw [ line width=0.2pt](13.75,10.75) to[short] (13.75,10);
+\draw [ line width=0.2pt](13.75,10) to[short] (14.5,10);
+\draw [ line width=0.2pt](13,8.5) to[short] (13.75,8.5);
+\draw [ line width=0.2pt](13.75,8.5) to[short] (13.75,9.5);
+\draw [ line width=0.2pt](13.75,9.5) to[short] (14.5,9.5);
+\draw [ line width=0.2pt](10,8.5) to[short] (11,8.5);
+\draw [ line width=0.2pt](11,10.5) to[short] (10.5,10.5);
+\draw [ line width=0.2pt](10.5,10.5) to[short] (10.5,8.5);
+\draw [ line width=0.2pt](8,11.25) to[short] (6.25,11.25);
+\draw [ line width=0.2pt](8,8.25) to[short] (6.25,8.25);
+\draw [ line width=0.2pt](8,8.75) to[short] (7.5,8.75);
+\draw [ line width=0.2pt](8,10.75) to[short] (6.25,10.75);
+\draw [ line width=0.2pt](7.5,10.75) to[short] (7.5,8.75);
+\node [font=\normalsize] at (17,9.75) {$F$};
+\node [font=\normalsize] at (6,11.25) {$A$};
+\node [font=\normalsize] at (6,10.75) {$B$};
+\node [font=\normalsize] at (6,8.25) {$C$};
+\end{circuitikz}
+}

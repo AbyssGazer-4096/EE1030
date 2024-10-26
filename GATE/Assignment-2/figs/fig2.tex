@@ -1,0 +1,15 @@
+\resizebox{0.4\textwidth}{!}{
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw (6.5,13.75) to[sinusoidal voltage source, sources/symbol/rotate=auto,l={$V_{in}$}] (6.5,11.75);
+\draw (7.25,13.75) to[R,l={$R_S$}] (9.5,13.75);
+\draw (10.5,11.75) to[empty Zener diode] (10.5,13.75);
+\draw (11.5,13.75) to[empty Zener diode] (11.5,11.75);
+\draw (11.5,13.75) to[short, -o] (12.75,13.75) ;
+\draw (11.5,11.75) to[short, -o] (12.75,11.75) ;
+\draw (9.5,13.75) to[short] (11.5,13.75);
+\draw (6.5,13.75) to[short] (7.25,13.75);
+\draw (6.5,11.75) to[short] (11.5,11.75);
+\node [font=\large] at (12.75,12.75) {$V_o$};
+\end{circuitikz}
+}

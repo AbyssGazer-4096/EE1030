@@ -1,0 +1,20 @@
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [->, >=Stealth] (8.75,8.75) -- (8.75,15.75);
+\draw [->, >=Stealth] (8.75,8.75) -- (17.5,8.75);
+\draw [dashed] (16.25,8.75) -- (16.25,13.75);
+\draw [short] (8.75,13.75) -- (16.25,13.25)node[pos=0.5,below]{$E_2$};
+\draw [short] (8.75,15) -- (16.25,13.75)node[pos=0.5,above]{$E_1$};
+\node [font=\large] at (8,15) {$100V$};
+\node [font=\large] at (8,13.5) {$80V$};
+\node [font=\large] at (16.75,13.75) {$80V$};
+\node [font=\large] at (16.75,13.25) {$72V$};
+\node [font=\large] at (8.75,8.5) {$0A$};
+\node [font=\large] at (12.5,8.25) {Current};
+\node [font=\large] at (7.5,11.75) {Voltage};
+\node [font=\large] at (16.25,8.5) {$4A$};
+\draw[domain=8.25:9.25,samples=100,smooth] plot (\x,{0.15*sin(6.3*\x r -8.25 r ) +10});
+\draw[domain=8.25:9.25,samples=100,smooth] plot (\x,{0.15*sin(6.3*\x r -8.25 r ) +9.75});
+\end{circuitikz}
+}

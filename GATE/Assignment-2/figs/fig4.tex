@@ -1,0 +1,43 @@
+\resizebox{0.4\textwidth}{!}{
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [ line width=0.2pt ] (9.5,12.5) rectangle (11.5,10);
+\draw [line width=0.2pt, short] (9.5,12.25) -- (10,12.25);
+\draw [line width=0.2pt, short] (10,12.25) -- (10,10.25);
+\draw [line width=0.2pt, short] (10,10.25) -- (9.5,10.25);
+\draw [line width=0.2pt, short] (11.5,12.25) -- (11,12.25);
+\draw [line width=0.2pt, short] (11,12.25) -- (11,10.25);
+\draw [line width=0.2pt, short] (11,10.25) -- (11.5,10.25);
+\draw [line width=0.2pt, short] (9.5,12) -- (9.4,12);
+\draw [line width=0.2pt, short] (9.4,12) -- (9.4,10.5);
+\draw [line width=0.2pt, short] (9.4,10.5) -- (9.5,10.5);
+\draw [line width=0.2pt, short] (11.5,12) -- (11.6,12);
+\draw [line width=0.2pt, short] (11.6,12) -- (11.6,10.5);
+\draw [line width=0.2pt, short] (11.6,10.5) -- (11.5,10.5);
+\draw [line width=0.2pt, short] (9.75,12.5) -- (9.75,12.6);
+\draw [line width=0.2pt, short] (9.75,12.6) -- (11.25,12.6);
+\draw [line width=0.2pt, short] (11.25,12.6) -- (11.25,12.5);
+\draw [line width=0.2pt, short] (9.75,10) -- (9.75,9.9);
+\draw [line width=0.2pt, short] (9.75,9.9) -- (11.25,9.9);
+\draw [line width=0.2pt, short] (11.25,9.9) -- (11.25,10);
+\draw (7.25,10.25) to[battery1] (7.25,9.5) node[left] {$V_{GS}$};
+\draw [ line width=0.2pt](7.25,10.25) to[short] (7.25,11.25);
+\draw [ line width=0.2pt](7.25,11.25) to[short] (9.4,11.25);
+\draw [ line width=0.2pt](7.25,9.5) to[short] (7.25,9);
+\draw [line width=0.2pt] (10.5,9) to[out=0,in=180] (9.25,9) to[crossing] (7.25,9);
+\draw [ line width=0.2pt](10.5,9.9) to[short] (10.5,9);
+\draw [ line width=0.2pt](8.25,11.25) to[short] (8.25,8.25);
+\draw [ line width=0.2pt](11.6,11.25) to[short] (12.5,11.25);
+\draw [ line width=0.2pt](12.5,11.25) to[short] (12.5,8.25);
+\draw [ line width=0.2pt](12.5,8.25) to[short] (8.25,8.25);
+\draw [ line width=0.2pt](10.5,12.6) to[short, -o] (10.5,13.25) node[right] {$V_D$};
+\node at (8.25,11.25) [circ]{};
+\node at (8.25, 11.5) {$V_G$};
+\draw [ line width=0.2pt](10.5,13.25) to[short] (10.5,13.25);
+\node at (10.5,9) [circ]{};
+\node at (10.75,9) {$V_S$};
+\node at (10.5, 12) {n};
+\node at (11.25, 11.25) {p};
+\node at (9.75, 11.25) {p};
+\end{circuitikz}
+}

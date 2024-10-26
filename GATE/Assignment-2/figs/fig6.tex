@@ -1,0 +1,27 @@
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [line width=0.2pt](8.75,10) to[R] (8.75,12.5) node[right] {$10k\Omega$};
+\draw [line width=0.2pt](10.5,10) to[R] (10.5,12.5) node[right] {$20k\Omega$};
+\draw [line width=0.2pt](12.5,10) to[R] (12.5,12.5) node[right] {$40k\Omega$};
+\draw [line width=0.2pt](14.25,10) to[R] (14.25,12.5) node[right] {$80k\Omega$};
+\draw [line width=0.2pt](8.75,15) to[normal open switch] (8.75,12.5);
+\draw [line width=0.2pt](10.5,15) to[normal open switch] (10.5,12.5);
+\draw [line width=0.2pt](12.5,15) to[normal open switch] (12.5,12.5);
+\draw [line width=0.2pt](14.25,15) to[normal open switch] (14.25,12.5);
+\draw [ line width=0.2pt](14.25,15) to[short] (6.25,15);
+\draw (6.25,15) to[battery1] (6.25,11.25);
+\draw [line width=0.2pt](6.25,11.25) to (6.25,10.25) node[ground]{};
+\draw [ line width=0.2pt](8.75,10) to[short] (16.25,10);
+\draw [ line width=0.2pt](17.75,9.5) node[op amp,scale=1] (opamp2) {};
+\draw [ line width=0.2pt](opamp2.+) to[short] (16.25,9);
+\draw [ line width=0.2pt] (opamp2.-) to[short] (16.25,10);
+\draw [ line width=0.2pt](18.95,9.5) to[short](19.25,9.5);
+\draw [line width=0.2pt](16.25,9) to (16.25,8) node[ground]{};
+\draw [ line width=0.2pt](19.25,9.5) to[short, -o] (21.25,9.5) node[right] {$V_o$};
+\draw [ line width=0.2pt](16.25,11.75) to[R, l=$5k\Omega$] (18.75,11.75);
+\draw [ line width=0.2pt](16.25,11.75) to[short] (16.25,10);
+\draw [ line width=0.2pt](18.75,11.75) to[short] (18.75,9.5);
+\end{circuitikz}
+}
+
