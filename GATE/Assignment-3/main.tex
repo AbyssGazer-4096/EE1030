@@ -1,0 +1,180 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{ASSIGNMENT-3\\GATE XE-2014}}
+\author{EE24BTECH11019 - DWARAK A}
+\maketitle
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section*{A : ENGINEERING MATHEMATICS}
+
+\bigskip
+
+\begin{enumerate}
+
+\subsection*{Q.1 to Q.7 carry one mark each.}
+
+    %14
+    \item Ten chocolates are distributed randomly among three children standing in a row. The probability that the first child receives exactly three chocolates is 
+        \begin{enumerate}
+            \item $\frac{5\times2^{11}}{3^9}$
+            \item $\frac{5\times2^{10}}{3^9}$
+            \item $\frac{1}{3^9}$
+            \item $\frac{1}{3}$
+        \end{enumerate}
+    
+    %15
+    \item Let the function $f:[5,0]\to\mathbb{R}$ be defined by
+
+        $$f(x)=
+        \begin{cases}
+            2x + 5, & 0 \leq x < 1 \\ 
+            2x^2 + 5, & 1 \leq x < 2 \\ 
+            \frac{2}{3}x^3 + \frac{23}{3}, & 2 \leq x \leq 5 
+        \end{cases}$$
+        The number of points where $f$ is not differentiable in $(0,5)$, is \underline{\hspace{1.5cm}}.
+    
+    %16
+    \item An integrating factor of the differential equation $\brak{3x^2y^3e^y+y^3+y^2}dx+\brak{x^3y^3e^y-xy}dy=0$ is
+        \begin{enumerate}
+            \item $\frac{1}{y}$
+            \item $\frac{1}{y^2}$
+            \item $\frac{1}{y^3}$
+            \item $\ln{y}$
+        \end{enumerate}
+
+    %17
+    \item If a cubic polynomial passes through the points $(0, 1)$, $(1, 0)$, $(2, 1)$ and $(3, 10)$, then it also passes through the point 
+        \begin{enumerate}
+            \item $(-2,-11)$
+            \item $(-1,-2)$
+            \item $(-1,-4)$
+            \item $(-2,-23)$
+        \end{enumerate}
+
+\subsection*{Q.8 to Q.11 carry two marks each.}
+
+    %18
+    \item Let the function $f:[0,\infty)\to\mathbb{R}$ be such that $f^\prime(x)=\frac{8}{x^2+3x+4}$ for $x>0$ and $f(0)=1$. Then $f(1)$ lies in the interval
+        \begin{enumerate}
+            \item $[0,1]$
+            \item $[2,3]$
+            \item $[4,5]$
+            \item $[6,7]$
+        \end{enumerate}
+
+    %19
+    \item The perimeter of a rectangle having the largest area that can be inscribed in the ellipse $\frac{x^2}{8}+\frac{y^2}{32}=1$, is \underline{\hspace{1.5cm}}.
+
+    %20
+    \item If the work done in moving a particle once around a circle $x^2+y^2=4$ under the force field $\vec{F}(x,y)=(2x-ay)\hat{i}+(2y+ax)\hat{j}$ is $16\pi$, then $\abs{a}$ is equal to \underline{\hspace{1.5cm}}.
+
+    %21
+    \item Let $r$ and $s$ be real numbers. If $A = \myvec{1&2&0\\2&0&3\\r&s&0}$ and $b=\myvec{1\\1\\s-1}$, then the system of linear equations $AX=b$ has
+        \begin{enumerate}
+            \item no solutions for $s\neq2r$.
+            \item infinitely many solutions for $s=2r\neq2$.
+            \item a unique solution for $s=2r=2$.
+            \item infinitely many solutions for $s=2r=2$.
+        \end{enumerate}
+
+\section*{B : FLUID MECHANICS}
+
+\subsection*{Q.1 to Q.9 carry one mark each.}
+
+    %22
+    \item A dam with a curved shape is shown in the figure. The cross sectional area of the dam (shaded portion) is $100m^2$ and its centroid is at $\bar{x}=10m$. The vertical component of the hydrostatic force, $F_z$, is acting at a distance $x_p$. The value of $x_p$ is \underline{\hspace{1.5cm}}$m$.
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig1.tex}
+        \end{figure}
+
+    %23
+    \item For an unsteady incompressible fluid flow, the velocity field is $\vec{V}=\brak{3x^2+3}t\,\hat{i}-6xyt\,\hat{j}$, where $x,y$ are in meters and $t$ is in seconds. Acceleration in $m/s^2$ at the point $x=10m$ and $y=0$, as measured by a stationary observer is
+        \begin{enumerate}
+            \item $303$
+            \item $162$
+            \item $43$
+            \item $13$
+        \end{enumerate}
+
+    %24
+    \item For an incompressible flow, the existence of components of acceleration for different types of flow is described in the table below.
+
+        \begin{tabular}{l l}
+            Type of Flow & Components of Acceleration \\
+            P: Steady and uniform & 1: Local exists, convective does not exist \\
+            Q: Steady and non-uniform & 2: Both exist \\
+            R: Unsteady and uniform & 3: Both do not exist \\
+            S: Unsteady and non-uniform & 4: Local does not exist, convective exists \\
+        \end{tabular}
+
+        Which one of the following options connecting the left column with the right column is correct?
+        \begin{enumerate}
+            \item P-$1$; Q-$4$; R-$3$; S-$2$
+            \item P-$4$; Q-$1$; R-$2$; S-$3$
+            \item P-$3$; Q-$2$; R-$1$; S-$4$
+            \item P-$3$; Q-$4$; R-$1$; S-$2$
+        \end{enumerate}
+
+    %25
+    \item Velocity in a two-dimensional flow field is specified as $u=x^2y;v=-y^2x$. The magnitude of the rate of angular deformation at a location $(x=2m \text{ and } y=1m)$ is \underline{\hspace{1cm}}$s^{-1}$.
+
+    %26
+    \item For a plane irrotational flow, equi-potential lines and streamlines are
+        \begin{enumerate}
+            \item parallel to each other.
+            \item at an angle of $90^\degree$ to each other.
+            \item at an angle of $45^\degree$ to each other.
+            \item at an angle of $60^\degree$ to each other.
+        \end{enumerate}
+
+    \end{enumerate}
+
+\end{document}
