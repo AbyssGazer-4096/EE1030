@@ -29,10 +29,10 @@ plt.close('all')
 
 # Plot for validation
 B = np.loadtxt('../data/validation_data.txt')
-#Xv = np.hstack((np.ones((B.shape[0],1)),B[:,[0]],B[:,[0]]**2)).T
+Xv = np.hstack((np.ones((B.shape[0],1)),B[:,[0]],B[:,[0]]**2)).T
 Cv = B[:,[1]]
 Tv = B[:,[0]]
-plt.plot(T, X.T@n_lsq)
+plt.plot(Tv, Xv.T@n_lsq)
 plt.plot(Tv, Cv, 'k.')
 plt.title('Validation Data')
 plt.ylabel('Output Voltage (V)')
