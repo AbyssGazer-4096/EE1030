@@ -9,7 +9,7 @@ void setup()
 
 void loop()
 {
-  float volt = 5*(float)analogRead(sensor)/1024;
+  float volt = 5*(float)analogRead(sensor)/1023;
   Serial.println(volt);
   delay(200);
 }
