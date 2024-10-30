@@ -1,0 +1,50 @@
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\Large]
+
+    % Coordinate axes
+    \draw [line width=0.8pt, ->, >=Stealth] (8.25,8) -- (8.25,16.5);
+    \draw [line width=0.8pt, ->, >=Stealth] (8.25,8) -- (16.75,8);
+    
+    % Filled area between axes and curve
+    \fill[gray!30] (8.25,8) -- (8.25,14.5) .. controls (10.5,9.25) and (10.5,9.25) .. (12.5,8) -- cycle;
+
+    % Ground and lines
+    \draw [line width=0.8pt, short] (8.25,14.5) -- (14.75,14.5);
+    \draw [line width=0.6pt, short] (13.75,14.5) -- (13.5,15);
+    \draw [line width=0.6pt, short] (13.5,15) -- (14,15);
+    \draw [line width=0.6pt, short] (14,15) -- (13.75,14.5);
+    \draw [line width=0.6pt, short] (13.5,14.25) -- (14,14.25);
+    \draw [short] (13.5,14) -- (14,14);
+
+    % Dimensions and markers
+    \draw [<->, >=Stealth] (7.75,14.5) -- (7.75,8) node[pos=0.5,left, fill=white]{40m};
+    \draw [short] (8.25,14.5) .. controls (10.5,9.25) and (10.5,9.25) .. (12.5,8);
+
+    % Points and labels
+    \node [font=\Large] at (8,7.75) {$O$};
+    \node [font=\Large] at (10.5,9.5) {$G$};
+    \node at (10.25,9.5) [circ] {};
+
+    % Horizontal distances
+    \draw [short] (8.25,7.75) -- (8.25,6.25);
+    \draw [short] (10.25,9.5) -- (10.25,6.25);
+    \draw [<->, >=Stealth] (8.25,6.75) -- (10.25,6.75) node[pos=0.5,below]{$\overline{X}$};
+
+    % Vertical lines
+    \draw [line width=0.6pt, short] (12.5,8) -- (12.5,4.5);
+    \draw [line width=0.6pt, short] (8.25,5.5) -- (8.25,4.5);
+
+    % Dimension labels
+    \draw [line width=0.6pt, <->, >=Stealth] (8.25,5) -- (12.5,5) node[pos=0.5,below, fill=white]{15m};
+
+    % Force vector Fz
+    \draw [line width=0.8pt, ->, >=Stealth] (9.75,13.5) -- (9.75,11) node[pos=0.5,right, fill=white]{$F_z$};
+    \draw [line width=0.6pt, <->, >=Stealth] (8.25,12.25) -- (9.75,12.25) node[pos=0.5,below]{$X_p$};
+
+    % Axis labels
+    \node [font=\Large] at (17.5,8) {X};
+    \node [font=\Large] at (8.25,17) {Z};
+
+\end{circuitikz}
+}
