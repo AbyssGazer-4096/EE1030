@@ -1,0 +1,16 @@
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\Large]
+\draw [line width=1pt, short] (7.5,16.25) -- (7.5,10);
+\draw [line width=1pt, short] (11.25,16.25) -- (11.25,10);
+\draw [ line width=0.8pt ] (3,14.5) rectangle (6.5,12);
+\draw[domain=7.5:11.25,samples=100,smooth, line width=0.8pt] plot (\x,{0.2*sin(7.61*\x r -7.5 r ) +16.25});
+\draw[domain=7.5:11.25,samples=100,smooth, line width=0.8pt] plot (\x,{0.2*sin(7.61*\x r -10.4 r ) +10});
+\draw [line width=0.8pt, <->, >=Stealth] (7.5,11.25) -- (11.25,11.25)node[pos=0.5, fill=white]{L = 20 cm};
+\node [font=\Large] at (9.5,13.25) {$k = 2.5 W/mK$};
+\node [font=\Large] at (12.5,14.5) {$T_Q = 25^\degree C$};
+\node [font=\Large] at (7,15.75) {$T_P$};
+\node [font=\Large] at (4.75,13.75) {$h=10 W/m^2K$};
+\node [font=\Large] at (4.75,12.75) {$T_\infty = 45^\degree C$};
+\end{circuitikz}
+}

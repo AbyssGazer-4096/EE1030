@@ -1,0 +1,37 @@
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\Huge]
+\draw [line width=1pt, short] (13.75,18.75) -- (13.75,15);
+\draw [line width=1pt, short] (13.75,18.75) -- (14.75,17.75);
+\draw [line width=1pt, short] (13.75,17.5) -- (14.75,16.5);
+\draw [line width=1pt, short] (13.75,16.25) -- (14.75,15.25);
+\draw [line width=1pt, short] (13.75,15) -- (14.75,14);
+\draw [line width=1pt, short] (13.75,18.25) .. controls (11.25,17.75) and (11.25,16) .. (13.75,15.5);
+\draw [ line width=1pt ] (13,17) ellipse (0.25cm and 0.25cm);
+\draw [line width=1pt, short] (13,17) .. controls (0.5,17.5) and (15.5,4.75) .. (0,6);
+\draw [ line width=1pt ] (3,3.5) circle (2cm);
+\draw [line width=1pt, short] (1.5,6) -- (2,5.25);
+\draw [line width=1pt, short] (4.75,6.25) -- (4,5.25);
+\draw [line width=1pt, short] (13,19) -- (13,23.75);
+\draw [line width=1pt, short] (0,23.75) -- (0,10);
+\draw [line width=1.4pt, ->, >=Stealth] (0,9.5) -- (0,6.25)node[pos=0.5,right, fill=white]{F};
+\draw [line width=1.4pt, short] (3,20.75) -- (3,6.5);
+\draw [line width=1.4pt, <->, >=Stealth] (0.25,22.5) -- (12.75,22.5)node[pos=0.5, fill=white]{300};
+\draw [line width=1.4pt, <->, >=Stealth] (3.25,20) -- (12.75,20)node[pos=0.5, fill=white]{200};
+\node [font=\Huge] at (12.5,14.75) {$X$};
+\draw [line width=1.4pt, short] (5,5.25) -- (18.75,5.25);
+\draw [line width=1.4pt, short] (15,17) -- (18.75,17);
+\draw [line width=1.4pt, short] (2.25,3) -- (3.75,3);
+\draw [line width=1.4pt, short] (2.25,3) -- (2,2.75);
+\draw [line width=1.4pt, short] (2.75,3) -- (2.5,2.75);
+\draw [line width=1.4pt, short] (3.25,3) -- (3,2.75);
+\draw [line width=1.4pt, short] (3.75,3) -- (3.5,2.75);
+\draw [line width=1.4pt, short] (2.25,3) .. controls (2.5,4.5) and (3.5,4.5) .. (3.75,3);
+\draw [ line width=1.4pt ] (3,3.5) circle (0.25cm);
+\draw [line width=1.4pt, ->, >=Stealth] (3,3.5) -- (4.75,4.25)node[pos=0.5,above]{100};
+\draw [line width=1.4pt, ->, >=Stealth] (2.75,2.25) .. controls (1,2.25) and (1,4.5) .. (2.75,4.75) ;
+\node [font=\Huge] at (0,5.5) {Z};
+\node [font=\Huge] at (3.75,7) {Y};
+\draw [line width=1.4pt, <->, >=Stealth] (17.5,16.75) -- (17.5,5.5)node[pos=0.5, fill=white]{300};
+\end{circuitikz}
+}
