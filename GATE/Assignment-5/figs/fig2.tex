@@ -1,0 +1,20 @@
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\Large]
+\draw [line width=0.8pt, ->, >=Stealth] (8.75,7.5) -- (8.75,15);
+\draw [line width=0.8pt, ->, >=Stealth] (8.75,7.5) -- (16.25,7.5);
+\draw [line width=1pt, short] (8.75,7.5) -- (10.75,12.5);
+\draw [line width=1pt, short] (12.5,7.5) -- (15,13.75);
+\draw [line width=1pt, short] (10.75,12.5) .. controls (11.75,13.5) and (12,13.6) .. (15,13.75);
+\draw [line width=0.8pt, short] (8.75,13.75) -- (15,13.75);
+\draw [line width=0.8pt, short] (8.75,12.5) -- (10.75,12.5);
+\node [font=\Large] at (8,13.75) {$210$};
+\node [font=\Large] at (8,12.5) {$180$};
+\node [font=\Large] at (10.5,13) {$P$};
+\node [font=\Large] at (15.5,13.75) {$Q$};
+\node [font=\Large] at (8.5,7.25) {$O$};
+\node [font=\Large] at (12.25,7) {$R$};
+\node [font=\Large] at (14.75,7) {Strain};
+\node [font=\Large, rotate around={90:(0,0)}] at (8.25,10) {Stress $(MPa)$};
+\end{circuitikz}
+}

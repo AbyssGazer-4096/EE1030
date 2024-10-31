@@ -1,0 +1,154 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{ASSIGNMENT-5\\GATE ME-2019}}
+\author{EE24BTECH11019 - DWARAK A}
+\maketitle
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+
+\subsection*{Q.1 to Q.25 carry one mark each.}
+
+    %17
+    \item The table presents the demand of a product. By simple three-months moving average method, the demand-forecast of the product for the month of September is
+        \begin{table}[!ht]
+            \centering
+            \input{tables/table1.tex}
+        \end{table}
+        \begin{enumerate}
+            \item $490$
+            \item $510$
+            \item $530$
+            \item $536.67$
+        \end{enumerate}
+
+    %18
+    \item Evaluation of $\int\limits_2^4x^3dx$ using a 2-equal-segment trapezoidal rule gives a value of \underline{\hspace{1cm}}
+    
+    %19
+    \item A block of mass $10 kg$ rests on a horizontal floor. The acceleration due to gravity is $9.81 m/s^2$. The coefficient of static friction between the floor and the block is $0.2$. A horizontal force of $10 N$ is applied on the block as shown in the figure. The magnitude of force of friction (in $N$) on the block is \underline{\hspace{1cm}}
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig1.tex}
+        \end{figure}
+
+    %20
+    \item  A cylindrical rod of diameter $10 mm$ and length $1.0 m$ is fixed at one end. The other end is twisted by an angle of $10^\degree$ by applying a torque. If the maximum shear strain in the rod is $p\times10^{-3}$, then $p$ is equal to \underline{\hspace{1cm}} (round off to two decimal places).
+
+    %21
+    \item A solid cube of side $1 m$ is kept at a room temperature of $32 ^\degree C$. The coefficient of linear thermal expansion of the cube material is $1\times 10^{-5}/{}^{\degree} C$ and the bulk modulus is $200 GPa$. If the cube is constrained all around and heated uniformly to $42 ^\degree C$, then the magnitude of volumetric (mean) stress (in $MPa$) induced due to heating is \underline{\hspace{1cm}}
+
+    %22
+    \item During a high cycle fatigue test, a metallic specimen is subjected to cyclic loading with a mean stress of $+140 MPa$, and a minimum stress of $-70 MPa$. The $R$-ratio (minimum stress to maximum stress) for this cyclic loading is \underline{\hspace{1cm}} (round off to one decimal place).
+
+    %23
+    \item Water flows through a pipe with a velocity given by $\vec{V} = \brak{\frac{4}{t}+x+y}\hat{j}m/s$, where $\hat{j}$ is the unit vector in the $y$ direction, $t (> 0)$ is in seconds, and $x$ and $y$ are in meters. The magnitude of total acceleration at the point $(x, y) = (1, 1)$ a $t = 2 s$ is \underline{\hspace{1cm}} $m/s^2$
+
+    %24
+    \item Air of mass $1 kg$, initially at $300 K$ and $10\,bar$, is allowed to expand isothermally till it reaches a pressure of $1\,bar$. Assuming air as an ideal gas with gas constant of $0.287 kJ/kg K$, the change in entropy of air (in $kJ/kg.K$, round off to two decimal places) is \underline{\hspace{1cm}}
+
+    %25
+    \item Consider the stress-strain curve for an ideal elastic-plastic strain hardening metal as shown in the figure. The metal was loaded in uniaxial tension starting from $\vec{O}$. Upon loading, the stress-strain curve passes through initial yield point at $\vec{P}$, and then strain hardens to point $\vec{Q}$, where the loading was stopped. From point $\vec{Q}$, the specimen was unloaded to point $\vec{R}$, where the stress is zero. If the same specimen is reloaded in tension from point $\vec{R}$, the value of stress at which the material yields again is \underline{\hspace{1cm}} $MPa$
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig2.tex}
+        \end{figure}
+
+\subsection*{Q.26 to Q.55 carry one mark each.}
+
+    %26
+    \item The set of equations
+        $$x+y+z=1$$
+        $$ax-ay+3z=5$$
+        $$5x-3y+az=6$$
+        has infinite solutions if $a=$
+        \begin{enumerate}
+            \item $-3$
+            \item $3$
+            \item $4$
+            \item $-4$
+        \end{enumerate}
+
+    %27
+    \item A harmonic function is analytic if it satisfies the Laplace equation.
+
+        If $u(x,y)=2x^2-2y^2+4xy$ is a harmonic function, then its conjugate harmonic function $v(x,y)$ is
+        \begin{enumerate}
+            \item $4xy-2x^2+2y^2+$ constant
+            \item $4y^2-4xy+$ constant
+            \item $2x^2-2y^2+xy+$ constant
+            \item $-4xy+2y^2-2x^2+$ constant
+        \end{enumerate}
+
+    %28
+    \item The variable $x$ takes a value between $0$ and $10$ with uniform probability distribution. The variable $y$ takes a value between $0$ and $20$ with uniform probability distribution. The probability of the sum of variables $(x + y)$ being greater than $20$ is
+        \begin{enumerate}
+            \item $0$
+            \item $0.25$
+            \item $0.33$
+            \item $0.50$
+        \end{enumerate}
+
+    %29
+    \item A car having weight $W$ is moving in the direction as shown in the figure. The center of gravity ($CG$) of the car is located at height $h$ from the ground, midway between the front and rear wheels. The distance between the front and rear wheels is $l$. The acceleration of the car is $a$, and acceleration due to gravity is $g$. The reactions on the front wheels $(R_{f})$ and rear wheels $(R_{r})$ are given by
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig3.tex}
+        \end{figure}
+        \begin{enumerate}
+            \item $R_{f}=R_{r}=\frac{W}{2}-\frac{W}{g}\brak{\frac{h}{l}}a$
+            \item $R_{f}=\frac{W}{2}+\frac{W}{g}\brak{\frac{h}{l}}a; R_{r}=\frac{W}{2}-\frac{W}{g}\brak{\frac{h}{l}}a$
+            \item $R_{f}=\frac{W}{2}-\frac{W}{g}\brak{\frac{h}{l}}a; R_{r}=\frac{W}{2}+\frac{W}{g}\brak{\frac{h}{l}}a$
+            \item $R_{f}=R_{r}=\frac{W}{2}+\frac{W}{g}\brak{\frac{h}{l}}a$
+        \end{enumerate}
+
+    \end{enumerate}
+
+\end{document}
