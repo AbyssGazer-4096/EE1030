@@ -1,0 +1,165 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{ASSIGNMENT-6\\GATE AE-2019 53-65}}
+\author{EE24BTECH11019 - DWARAK A}
+\maketitle
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+
+\subsection*{Q.37 - Q.55 Numerical Answer Type (NAT), carry TWO mark each (no negative marks).}
+
+    %43
+    \item An aircraft with a turbojet engine is flying at $270 m/s$. The enthalpy of the incoming air at the intake is $260 kJ/kg$ and the enthalpy of the exhaust gases at the nozzle exit is $912 kJ/kg$. The ratio of mass flow rates of fuel and air is equal to $0.019$. The chemical energy (heating value) of fuel is $44.5 MJ/kg$ and the combustion process is ideal. The total loss of heat from the engine to the ambient is $25 kJ$ per $kg$ of air. The velocity of the exhaust jet is \underline{\hspace{1cm}} $m/s$ (round off to two decimal places).
+
+    %44
+    \item Hot gases are generated at a temperature of $2100 K$ and a pressure of $14 MPa$ in a rocket chamber. The hot gases are expanded ideally to the ambient pressure of $0.1 MPa$ in a convergent-divergent nozzle having a throat area of $0.1 m^2$. The molecular mass of the gas is $22 kg/kmol$. The ratio of specific heats $(\gamma)$ of the gas is $1.32$. The value of the universal gas constant ($R_0$) is $8314 J/kmol-K$. The acceleration due to gravity, $g$, is $9.8 m/s^2$. The specific impulse of the rocket is \underline{\hspace{1cm}} seconds (round off to two decimal places). 
+    
+    %45
+    \item A twin-spool turbofan engine is operated at sea level $(P_{a} = 1 bar, T_{a} = 288 K)$. The engine has separate cold and hot nozzles. During static thrust test at sea level, the overall mass flow rate of air through the engine and the cold exhaust temperature are measured to be $100 kg/s$ and $288 K$, respectively. The parameters for the engine are:
+
+Fan pressure ratio = $1.6$
+
+Overall pressure ratio = $20$
+
+Bypass ratio = $3.0$
+
+Turbine entry temperature = $1800 K$.
+
+        The specific heat at constant pressure $(C_{p})$ is $1.005 kJ/kg-K$ and the ratio of specific heats $(\gamma)$ is $1.4$ for air.
+
+Assuming ideal fan and ideal expansion in the nozzle, the sea-level static thrust from the cold nozzle is \underline{\hspace{1cm}} $kN$ (round off to two decimal places). 
+
+    %46
+    \item At the design conditions, the velocity triangle at the mean radius of a single stage axial compressor is such that the blade angle at the rotor exit is equal to $30\degree$. The absolute velocities at the rotor inlet and exit are equal to $140 m/s$ and $240 m/s$, respectively. The flow velocities relative to the rotor at inlet and exit of the rotor are equal to $240 m/s and 140 m/s$, respectively.
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig1.tex}
+        \end{figure}
+        The blade speed $(U)$ at the mean radius of the rotor is \underline{\hspace{1cm}} $m/s$ (round off to two decimal places).
+
+    %47
+    \item A single stage axial turbine has a mean blade speed of $340 m/s$ at design condition with blade angles at inlet and exit of the rotor being $21\degree$ and $55\degree$, respectively. The degree of reaction at the mean radius of the rotor is equal to $0.4$. The annulus area at the rotor inlet is $0.08 m^2$ and the density of gas at the rotor inlet is $0.9 kg/m^3$. The flow rate through the turbine at these conditions is \underline{\hspace{1cm}} $kg/s$ (round off to two decimal places). 
+
+    %48
+    \item The air flow rate through the gas generator of a turboprop engine is $100 kg/s$. The stagnation temperatures at inlet and exit of the combustor are $600 K$ and $1200 K$, respectively. The burner efficiency is $90\%$ and the heating value of the fuel is $40 MJ/kg$. The specific heats at constant pressure ($C_{p}$)) for air and burned gases are $1000 J/kg-K$ and $1200 J/kg-K$, respectively. The flow rate of the fuel being used is \underline{\hspace{1cm}} $kg/s$ (round off to two decimal places).
+
+(Note: Do not neglect the fuel flow rate with respect to the air flow rate) 
+
+    %49
+    \item A rigid horizontal bar $ABC$, with roller support at $A$, is pinned to the columns $BD$ and $CE$ at points $B$ and $C$, respectively as shown in figure. The other end of the column $BD$ is fixed at $D$, whereas the column $CE$ is pinned at $E$. $A$ vertical load $P$ is applied on the bar at a distance '$a$' from point $B$.
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig2.tex}
+        \end{figure}
+
+        The two columns are made of steel with elastic modulus $200 GPa$ and have a cross section of $1.5 cm \times 1.5 cm$. The value of '$a$' for which both columns buckle simultaneously, is \underline{\hspace{1cm}} $cm$ (round off to one decimal place). 
+
+    %50
+    \item A two-cell wing box is shown in the figure. The cell walls are $1.5 mm$ thick and the shear modulus $G = 27 GPa$. If the structure is subjected to a torque of $12 kNm$, then the wall $AD$ will experience a shear stress of magnitude \underline{\hspace{1cm}} $MPa$ (round off to one decimal place).
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig3.tex}
+        \end{figure} 
+
+    %51
+    \item Two cantilever beams $AB$ and $DC$ are in contact with each other at their free ends through a roller as shown in the figure. Both beams have a square cross section of $50 mm \times 50 mm$, and the elastic modulus $EF = 70 GPa$. If beam $AB$ is subjected to a uniformly distributed load of $20 KN/m$, then the compressive force experienced by the roller is \underline{\hspace{1cm}} $kN$ (round off to one decimal place).
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig4.tex}
+        \end{figure}
+
+    %52
+    \item A $3m \times 1m$ signboard is supported by a vertical hollow pole that is fixed to the ground. The pole has a square cross section with outer dimension $250 mm$. The yield strength of the pole material is $240 MPa$. To sustain a wind pressure of $7.5 kPa$, the dimension $d$ of the pole is \underline{\hspace{1cm}} $mm$ (round off to nearest integer).
+
+        (Neglect the effect of transverse shear and load due to wind pressure acting on the pole) 
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig5.tex}
+        \end{figure}
+
+    %53
+    \item An airplane weighing $5500 kg$ is in a steady level flight with a speed of $225 m/s$. The pilot initiates a steady pull-up maneuver with a radius of curvature of $775 m$. The location of center of gravity ($CG$), center of pressure on wing ($CP$) and point of action ($T$) of tail force are marked in the figure. Use $g = 9.81 m/s^2$. Neglect drag on the tail and assume that tail force is vertical. Assuming the engine thrust and drag to be equal, opposite and collinear, the tail force is \underline{\hspace{1cm}} $kN$ (round off to one decimal place).
+        \begin{figure}[!ht]
+            \centering
+            \input{figs/fig6.tex}
+        \end{figure}
+
+    %54
+    \item A jet aircraft weighing $10,000 kg$ has an elliptic wing with a span of $10 m$ and area $30 m^2$. The $C_{D_{0}}$ for the aircraft is $0.025$. The maximum speed of the aircraft in steady and level flight at sea level is $100 m/s$. The density of air at sea level is $1.225 kg/m^3$, and take $g = 10 m/s^2$. The maximum thrust developed by the engine at sea level is \underline{\hspace{1cm}} N (round off to two decimal places). 
+
+    %55
+    \item Consider a jet transport airplane with the following specifications:
+
+        Lift curve slope for wing-body $\frac{\partial C_{L_{wb}}}{\alpha_{wb}}$ = 0.1 /deg
+
+        Lift curve slope for tail $\frac{\partial C_{L_{t}}}{\alpha_{t}}$ = 0.068 /deg
+
+        Tail area $S_{t} = 80 m^2$
+
+        Wing area $S = 350 m^2$
+
+        Distance between mean aerodynamic centers of tail and wing-body $\bar{l}_{t}=28 m$
+
+        Mean aerodynamic chord $\bar{c} = 9m$
+
+        Downwash $\epsilon = 0.4\alpha$
+
+        Axial location of the wing-body mean aerodynamic center $x_{ac}/\bar{c} = 0.25$
+
+        Axial location of the center of gravity $x_{cg}/\bar{c} = 0.3$
+
+        All axial locations are with respect to the leading edge of the root chord and along the body $x$-axis. Ignore propulsive effects.
+
+        The pitching-moment-coefficient curve slope ($C_{m_{\alpha}}$) is \underline{\hspace{1cm}} /deg (round off to three decimal places). 
+
+    \end{enumerate}
+
+\end{document}
