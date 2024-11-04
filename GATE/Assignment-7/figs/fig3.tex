@@ -1,0 +1,23 @@
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\Large]
+\draw [ line width=1pt ] (12.5,16.25) rectangle (25,8.75);
+\draw [line width=1pt, short] (17.5,16.25) -- (17.5,8.75);
+\node [font=\Large] at (17.25,16.75) {$A$};
+\node [font=\Large] at (25.25,16.75) {$B$};
+\node [font=\Large] at (25.25,8.25) {$C$};
+\node [font=\Large] at (17.25,8.25) {$D$};
+\node [font=\Large] at (12.25,8.25) {$E$};
+\node [font=\Large] at (12.25,16.75) {$F$};
+\draw [line width=0.6pt, dashed] (12.5,8.75) -- (12.5,6.75);
+\draw [line width=0.6pt, dashed] (17.5,8.75) -- (17.5,7);
+\draw [line width=0.6pt, dashed] (25,8.75) -- (25,7.25);
+\draw [line width=0.6pt, dashed] (25,8.75) -- (26.5,8.75);
+\draw [line width=0.6pt, dashed] (25,16.25) -- (26.5,16.25);
+\draw [line width=0.6pt, ->, >=Stealth] (20,17.5) .. controls (19,18.75) and (17.5,18.75) .. (16.25,17.5) ;
+\node [font=\Large] at (18,19) {$12kNm$};
+\draw [line width=0.6pt, <->, >=Stealth] (26,16.25) -- (26,8.75)node[pos=0.5,right, fill=white]{300mm};
+\draw [line width=0.6pt, <->, >=Stealth] (17.5,7.75) -- (25,7.75)node[pos=0.5,below, fill=white]{300mm};
+\draw [line width=0.6pt, <->, >=Stealth] (17.5,7.75) -- (12.5,7.75)node[pos=0.5,below, fill=white]{200mm};
+\end{circuitikz}
+}
