@@ -1,0 +1,183 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}  % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{\textbf{ASSIGNMENT-7\\GATE ST-2022 53-65}}
+\author{EE24BTECH11019 - DWARAK A}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+
+\subsection*{Q.36 - Q.65 carry TWO marks each}
+
+    %43
+    \item Let $X_1, X_2, \dots, X_7$ be a random sample from a normal population with mean $0$ and variance $\theta > 0$. Let $$K = \frac{X_1^2+X_2^2}{X_1^2+X_2^2+\cdots+X_7^2}$$ Consider the following statements:
+        \begin{enumerate}[label = (\Roman*)]
+            \item The statistics $K$ and $X_1^2+X_2^2+\cdots+X_7^2$ are linearly independent.
+            \item $\frac{7K}{2}$ has an $F$-distribution with $2$ and $7$ degrees of freedom.
+            \item $E(K^2)=\frac{8}{63}$
+        \end{enumerate}
+        Then which of the following statements is/are true?
+        \begin{enumerate}
+            \item (I) and (II) only 
+            \item (I) and (III) only 
+            \item (II) and (III) only 
+            \item (I) only 
+        \end{enumerate}
+
+    %44
+    \item Consider the following statements:
+        \begin{enumerate}[label = (\Roman*)]
+            \item Let a random variable $X$ have the probability density function $$f_{X}(x)=\frac{1}{2}e^{-\abs{x}},\quad-\infty<x<\infty$$ Then there exist $i.i.d$ random variables $X_1$ and $X_2$ such that $X$ and $X_1-X_2$ have the same distribution.
+            \item Let a random variable $Y$ have the probability density function $$f_{Y}(y)=
+                \begin{cases}
+                    \frac{1}{4}, & -2<y<2 \\
+                    0, & \text{elsewhere}
+                \end{cases}$$
+                Then there exist $i.i.d$ random variables $Y_1$ and $Y_2$ such that $Y$ and $Y_1-Y_2$ have the same distribution.
+        \end{enumerate}
+        Then which of the above statements is/are true?
+        \begin{enumerate}
+            \item (I) only 
+            \item (II) only 
+            \item Both (I) and (II)
+            \item Neither (I) nor (II) 
+        \end{enumerate}
+    
+    %45
+    \item Suppose $X_1, X_2, \dots, X_{n}, \dots$ are independent exponential random variables with the mean $\frac{1}{2}$. Let the notation $i.o.$ denote 'infinitely often'. Then which of the following is/are true?
+        \begin{enumerate}
+            \item $P\brak{\cbrak{X_{n}>\frac{\epsilon}{2}\log_{e}n}i.o.}=1$ for $0<\epsilon\leq1$
+            \item $P\brak{\cbrak{X_{n}<\frac{\epsilon}{2}\log_{e}n}i.o.}=1$ for $0<\epsilon\leq1$
+            \item $P\brak{\cbrak{X_{n}>\frac{\epsilon}{2}\log_{e}n}i.o.}=1$ for $\epsilon>1$
+            \item $P\brak{\cbrak{X_{n}<\frac{\epsilon}{2}\log_{e}n}i.o.}=1$ for $\epsilon>1$
+        \end{enumerate}
+
+    %46
+    \item Let $\cbrak{X_{n}}, n\geq1$, be a sequence of random variables with the probability mass functions $$p_{X_{n}}(x)=
+        \begin{cases}
+            \frac{n}{n+1}, & x=0,\\
+            \frac{1}{n+1}, & x = n, \\
+            0, & \text{elsewhere.}
+        \end{cases}$$
+            Let $X$ be a random variable with $P(X = 0) = 1$. Then which of the following statements is/are true?
+            \begin{enumerate}
+                \item $X_{n}$ converges to $X$ in distribution
+                \item $X_{n}$ converges to $X$ in probability
+                \item $E\brak{X_{n}}\to E(X)$ 
+                \item There exists a subsequence $\cbrak{X_{n}}$ of $X_{n}$ such that $X_{n_{k}}$ converges to $X$ almost surely
+            \end{enumerate}
+
+    %47
+        \item Let $M$ be any $3 \times 3$ symmetric matrix with eigenvalues $1$, $2$ and $3$. Let $N$ be any $3 \times 3$ matrix with real eigenvalues such that $MN + N^\top M = 3I$, where $I$ is the $3 \times 3$ identity matrix. Then which of the following cannot be eigenvalue(s) of the matrix $N$ ?
+            \begin{enumerate}
+                \item $\frac{1}{4}$
+                \item $\frac{3}{4}$
+                \item $\frac{1}{2}$
+                \item $\frac{7}{4}$
+            \end{enumerate}
+
+    %48
+        \item Let $M$ be a $3 \times 2$ real matrix having a singular value decomposition as $M=USV^\top$ where the matrix $S = \myvec{\sqrt{3} & 0 & 0 \\ 0 & 1 & 0}^\top,U$ is a $3 \times 3$ orthogonal matrix, and $V$ is a $2 \times 2$ orthogonal matrix. Then which of the following statements is/are true?
+            \begin{enumerate}
+                \item The rank of the matrix $M$ is $1$
+                \item The trace of the matrix $M^\top M$ is $4$
+                \item The largest singular value of the $(M^\top M)^{-1}M^\top$ matrix is $1$
+                \item The nullity of the matrix $M$ is $1$
+            \end{enumerate}
+
+    %49
+        \item Let $X$ be a random variable such that $$P\brak{\frac{a}{2\pi}X \in \mathbb{Z}}=1,\quad a>0,$$ where $\mathbb{Z}$ denotes the set of all integers. If $\phi_{X}(t),t\in\mathbb{R}$, denotes the characteristic function of $X$, then which of the following is/are true?
+            \begin{enumerate}
+                \item $\phi_{X}(a) = 1$
+                \item $\phi_{X}(\cdot)$ is periodic with period $a$
+                \item $\abs{\phi_{X}(t)}<1$ for all $t \neq a$
+                \item $\int\limits_0^{2\pi}e^{-itn}\phi_{X}(t)dt = \pi P\brak{X=\frac{2\pi n}{a}}, n\in\mathbb{Z}, i=\sqrt{-1}$
+            \end{enumerate}
+
+    %50
+        \item Which of the following real valued functions is/are uniformly continuous on $[0,\infty)$ ?
+            \begin{enumerate}
+                \item $\sin^2{x}$
+                \item $x\sin{x}$
+                \item $\sin{(\sin{x})}$
+                \item $\sin{(x\sin{x})}$
+            \end{enumerate}
+
+    %51
+    \item Two independent random samples, each of size $7$, from two populations yield the following values:
+        \begin{table}[!ht]
+            \centering
+            \input{tables/table1.tex}
+        \end{table}
+        If Mann-Whitney $U$ test is performed at $5\%$ level of significance to test the null hypothesis $H_0$: Distributions of the populations are same, against the alternative hypothesis $H_1$: Distributions of the populations are not same, then the value of the test statistic $U$ (in integer) for the given data, is \underline{\hspace{1cm}}
+
+    %52
+    \item Consider the multiple regression model $$Y=\beta_0+\beta_1X_1+\beta_2X_2+\beta_3X_3+\epsilon,$$ where $\epsilon$ is normally distributed with mean $0$ and variance $\sigma^2 > 0$, and $\beta_0 , \beta_1, \beta_2, \beta_3$ are unknown parameters. Suppose $52$ observations of $\brak{Y, X_1, X_2, X_3}$ yield sum of squares due to regression as $18.6$ and total sum of squares as $79.23$. Then, for testing the null hypothesis $H_0 : \beta_1 = \beta_2 = \beta_3 = 0$ against the alternative hypothesis $H_1: \beta_{i} \neq 0 \text{ for some i} = 1, 2, 3$, the value of the test statistic (rounded off to three decimal places), based on one way analysis of variance, is \underline{\hspace{1cm}}
+
+    %53
+    \item Suppose a random sample of size $3$ is taken from a distribution with the probability density function $$f(x)=
+        \begin{cases}
+            2x, & 0<x<1,\\
+            0, & \text{elsewhere.}
+        \end{cases}$$
+        If $p$ is the probability that the largest sample observation is at least twice the smallest sample observation, then the value of $p$ (rounded off to three decimal places) is \underline{\hspace{1cm}}
+
+    %54
+    \item Let a linear model $Y=\beta_0+\beta_1X+\epsilon$ be fitted to the following data, where $\epsilon$ is normally distributed with mean $0$ and unknown variance $\sigma^2>0$
+        \begin{table}[!ht]
+            \centering
+            \input{tables/table2.tex}
+        \end{table}
+        Let $\hat{Y}_{0}$ denote the ordinary least-square estimator of $Y$ at $X = 6$, and the variance of $hat{Y}_0=c\sigma^2$. Then the value of the real constant $c$ (rounded off to one decimal place) is equal to \underline{\hspace{1cm}}
+
+    %55
+    \item Let $0, 1, 1, 2, 0$ be five observations of a random variable $X$ which follows a Poisson distribution with the parameter $\theta > 0$. Let the minimum variance unbiased estimate of $P(X \leq 1)$, based on this data, be $\alpha$. Then $5^4\alpha$ (in integer) is equal to \underline{\hspace{1cm}}
+
+    \end{enumerate}
+
+\end{document}
