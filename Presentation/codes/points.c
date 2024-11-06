@@ -22,7 +22,7 @@ int main(){
     double x1 = 3.0, y1 = 6.0, x2 = -3.0, y2 = 4.0;
     int m = 2, n = 1;
     int k1 = 10, k2 = 10;
-    double **A, **B, **mid_point, **s_ab, **bisectorABMidpoint;
+    double **A, **B, **mid_point, **m_ab, **n_ab;
 
     A = createMat(m, n);
     B = createMat(m, n);
@@ -37,8 +37,8 @@ int main(){
     mid_point = Matscale(Matadd(A, B, m, n), m, n, 0.5);
 
     // Calculate the vector AB and then the perpendicular bisector vector
-    s_ab = Matsub(B, A, m, n);
-    bisectorABMidpoint = normVec(s_ab);
+    m_ab = Matsub(B, A, m, n);
+    n_ab = normVec(m_ab);
 
     // Open file to write points
     FILE *fptr;
@@ -53,7 +53,7 @@ int main(){
     fprintf(fptr, "%lf %lf\n", mid_point[0][0], mid_point[1][0]);
 
     // Generate points on the perpendicular bisector
-    line_gen(fptr, mid_point, bisectorABMidpoint, m, n, 10, 10);
+    line_gen(fptr, mid_point, n_ab, m, n, 10, 10);
 	
     // Close the file
     fclose(fptr);
@@ -62,7 +62,7 @@ int main(){
     freeMat(A,m);
     freeMat(B,m);
     freeMat(mid_point,m);
-    freeMat(s_ab,m);
-    freeMat(bisectorABMidpoint,m);
+    freeMat(m_ab,m);
+    freeMat(n_ab,m);
     return 0;
 }
