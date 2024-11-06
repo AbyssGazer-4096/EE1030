@@ -11,7 +11,7 @@ y = data[:, 1]
 
 # Define the points A, B, and (0,9)
 [A, B, C] = np.array(points)
-[txtA, txtB, txtC] = ['A'+str(tuple(A)),'B'+str(tuple(B)),'C'+str(tuple(C))]
+txtA, txtB, txtC = 'A'+str(tuple(A)),'B'+str(tuple(B)),'C'+str(tuple(C))
 
 # Plot the locus of X
 plt.figure()
@@ -32,7 +32,7 @@ plt.ylabel('Y-axis')
 plt.title('Plot of Locus of X')
 plt.axis('equal')
 plt.grid(True)
-plt.legend(loc = 'upper right')
+plt.legend(loc = 'upper left')
 
 # Save and Display plot
 plt.savefig("../figs/plot.png")
