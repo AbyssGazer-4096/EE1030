@@ -101,6 +101,7 @@ If $\vec{X}$ is equidistant from points $\vec{A}$ and $\vec{B}$
 \end{align}
 Expanding the squared norms:
 \begin{align}
+    \label{eq:mat_eqn_unspl}
 	\norm{\vec{A}}^2 - 2\vec{A}^\top \vec{X} + \norm{\vec{X}}^2 &= \norm{\vec{B}}^2 - 2\vec{B}^\top \vec{X} + \norm{\vec{X}}^2
 \end{align}
 \end{frame}
@@ -109,16 +110,16 @@ Expanding the squared norms:
 \begin{frame}
 \frametitle{Perpendicular Bisector Equation}
 
-The equation simplifies to
+The equation \eqref{eq:mat_eqn_unspl} simplifies to
 \begin{align}
-        \label{eq:mat_eqn}
+    \label{eq:mat_eqn}
 	\brak{\vec{A} - \vec{B}}^\top \vec{X} &= \frac{\norm{\vec{A}}^2 - \norm{\vec{B}}^2}{2}
 \end{align}
 
 Substituting the $\vec{A}$ and $\vec{B}$ values, \eqref{eq:mat_eqn} can be derived as follows
 
 \begin{align}
-    \myvec{6 \\ 2}^\top \vec{X} &= \frac{\norm{\myvec{3 \\ 6}}^2-\norm{\myvec{-3 \\ 4}}^2}{2} \\
+    \myvec{3-(-3) \\ 6-4}^\top \vec{X} &= \frac{\norm{\myvec{3 \\ 6}}^2-\norm{\myvec{-3 \\ 4}}^2}{2} \\
     \myvec{6 \\ 2}^\top \vec{X} &= 10 \\
     \label{eq:line_eqn} \implies \myvec{3 \\ 1}^\top \vec{X} &= 5
 \end{align}

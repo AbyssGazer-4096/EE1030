@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -39,6 +42,8 @@
 \@writefile{toc}{\beamer@subsectionintoc {3}{2}{Equidistant Point Condition}{5}{0}{2}}
 \@writefile{nav}{\headcommand {\beamer@subsectionpages {4}{4}}}
 \@writefile{nav}{\headcommand {\beamer@subsectionentry {0}{3}{2}{5}{Equidistant Point Condition}}}
+\@writefile{snm}{\beamer@slide {eq:mat_eqn_unspl}{5}}
+\newlabel{eq:mat_eqn_unspl}{{3.3}{5}{Equidistant Point Condition}{Doc-Start}{}}
 \@writefile{nav}{\headcommand {\slideentry {3}{2}{1}{5/5}{Equidistant Point Condition}{0}}}
 \@writefile{nav}{\headcommand {\beamer@framepages {5}{5}}}
 \@writefile{toc}{\beamer@subsectionintoc {3}{3}{Perpendicular Bisector Equation}{6}{0}{2}}

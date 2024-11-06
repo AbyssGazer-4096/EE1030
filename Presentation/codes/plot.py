@@ -26,13 +26,14 @@ plt.annotate(txtA, xy = A)
 plt.annotate(txtB, xy = B)
 plt.annotate(txtC, xy = C)
 
-# Plot specs
+# Plot Specs
 plt.xlabel('X-axis')
 plt.ylabel('Y-axis')
 plt.title('Plot of Locus of X')
 plt.axis('equal')
 plt.grid(True)
-plt.legend(loc = 'upper left')
+plt.legend()
+plt.tight_layout()
 
 # Save and Display plot
 plt.savefig("../figs/plot.png")
