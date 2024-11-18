@@ -1,0 +1,548 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{gvv}
+\geometry{a4paper, margin=1in}
+
+\title{Eigenvalue Algorithms: Analysis}
+\author{Dwarak A\\EE24BTECH11019}
+\date{\today}
+\numberwithin{equation}{subsubsection}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	This report investigates various algorithms for computing eigenvalues, analyzing their theoretical foundations and computational complexity. The primary focus is on iterative methods, matrix factorization techniques, and their respective trade-offs in terms of accuracy and efficiency.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Eigenvalues and eigenvectors are fundamental concepts in linear algebra, representing intrinsic properties of matrices and their associated transformations. They play a critical role in a wide range of scientific and engineering applications, from solving differential equations to analyzing complex systems in quantum mechanics, structural dynamics, and data science.
+
+\subsection{Objective}
+The objectives of this project are:
+\begin{itemize}
+	\item To study and implement general eigenvalue computation algorithms.
+	\item To analyze the time complexity and computational trade-offs of these algorithms.
+\end{itemize}
+
+\subsection{Motivation}
+
+Eigenvalues are fundamental in understanding matrix behavior and have broad scientific and computational relevance:
+\begin{itemize}
+	\item \textbf{Mathematical Importance:} Core to spectral theory and linear transformations, revealing intrinsic matrix properties.
+	\item \textbf{Applications in Science and Engineering:} Crucial in vibrational analysis, system stability, and quantum mechanics.
+	\item \textbf{Data Science and Machine Learning:} Drive techniques like Principal Component Analysis (PCA) and graph-based analytics.
+	\item \textbf{Optimization and Numerical Solutions:} Applied in quadratic programming, differential equations, and matrix decomposition.
+	\item \textbf{Interdisciplinary Relevance:} Integral to physics, economics, biology, and engineering for modeling and simulations.
+	\item \textbf{Algorithmic Challenges:} Drive innovations in computational efficiency and large-scale matrix handling.
+\end{itemize}
+
+\section{Theory}
+
+\subsection{Eigenvalues and Eigenvectors}
+A matrix can be interpreted as a linear transformation that maps vectors in a vector space to other vectors within the same or different vector space. There exist specific vectors, known as \emph{eigenvectors}, which, when transformed by the matrix, result in a vector that is a scalar multiple of the original vector. For a matrix 
+$A\in\mathbb{C}^{n\times n}$, a vector $\vec{v}\in\mathbb{C}^n\,(\vec{v}\neq\vec{0})$ is an eigenvector if there exists a scalar $\lambda$ (called the \emph{eigenvalue}) such that:
+\begin{align}
+	\label{eq:2.1} A\vec{v} = \lambda\vec{v} 
+\end{align}
+Here, $\vec{v}$ retains (or reverses) its direction under the transformation, and $\lambda$ represents the scaling factor.
+
+\subsection{Special Matrices}
+
+\subsubsection{Unitary Matrices:}
+
+A matrix $ U $ is \textit{unitary} if:
+\begin{align}
+U^\dagger U = U U^\dagger = \mtx{I}
+\end{align}
+where $ U^\dagger $ is the conjugate transpose of $ U $ and $ \mtx{I} $ is the identity matrix.
+
+\subsubsection{Orthogonal Matrices:}
+
+A matrix $ Q $ is \textit{orthogonal} if:
+\begin{align}
+Q^T Q = Q Q^T = \mtx{I}
+\end{align}
+where $ Q^T $ is the transpose of $ Q $. Orthogonal matrices preserve the dot product.
+
+\subsubsection{Hermitian Matrices:}
+
+A matrix $ A $ is \textit{Hermitian} if:
+\begin{align}
+A^\dagger = A
+\end{align}
+where $ A^\dagger $ is the conjugate transpose of $ A $.
+
+\subsubsection{Skew-Hermitian Matrices:}
+
+A matrix $ A $ is \textit{skew-Hermitian} if:
+\begin{align}
+A^\dagger = -A
+\end{align}
+
+\subsubsection{Positive Definite Matrices:}
+
+A matrix $ A $ is \textit{positive definite} if:
+\begin{align}
+\vec{x}^\top A\vec{x} > 0
+\end{align}
+for all non-zero vectors $\vec{x}$.
+
+\subsection{Similarity Transformations}
+
+In linear algebra, similarity transformations play a crucial role in simplifying matrices while preserving their fundamental properties, such as eigenvalues.
+
+\subsubsection{Definition}
+
+A square matrix $A \in \mathbb{R}^{n \times n} $ is said to be \textit{similar} to another square matrix $B \in \mathbb{R}^{n \times n}$ if there exists an invertible matrix $P \in \mathbb{R}^{n \times n}$ such that
+\begin{align}
+	B = P^{-1}AP 
+\end{align}
+
+The process of finding $ B $ via this transformation is called a \textbf{similarity transformation}.
+
+\subsubsection{Properties}
+\begin{enumerate}
+	\item Similar matrices have the same eigenvalues.
+	      \begin{align}
+	      	\mydet{P^{-1}AP - \lambda I} & = \mydet{P^{-1}AP - \lambda P^{-1}IP}                  \\
+	      	                             & = \mydet{P^{-1}(A - \lambda I)P}                       \\
+	      	                             & = \mydet{P^{-1}}\cdot\mydet{A-\lambda I}\cdot\mydet{P} \\
+	      	                             & = \mydet{A-\lambda I}                                  
+	      \end{align}
+	      The characteristic polynomial of similar matrices is identical:
+	       
+	\item Similar matrices share the same trace and determinant:
+	      \begin{align}
+	      	\mathrm{tr}(A) = \mathrm{tr}(B), \quad \mydet{A} = \mydet{B}. 
+	      \end{align}
+	\item If $ A $ and $ B $ are similar, then they represent the same linear transformation under a change of basis.
+\end{enumerate}
+
+\subsubsection{Applications}
+
+Similarity transformations are particularly useful in diagonalizing matrices. A matrix $A$ is diagonalizable if it is similar to a diagonal matrix $D$, where
+\begin{align}
+	D = P^{-1}AP
+\end{align}
+and the columns of $P$ are the eigenvectors of $A$, while the diagonal entries of $D$ are the eigenvalues of $A$.
+
+\subsection{QR Decomposition}
+QR decomposition is an essential algorithm in numerical linear algebra, where a matrix $ A \in \mathbb{C}^{n \times n} $ is decomposed into:
+\begin{align}
+	A = QR,
+\end{align}
+where:
+\begin{itemize}
+	\item $ Q \in \mathbb{C}^{n \times n} $ is a unitary matrix ($ Q^* Q = I $), and
+	\item $ R \in \mathbb{C}^{n \times n} $ is an upper triangular matrix.
+\end{itemize}
+
+\subsection{Hessenberg Matrix}
+
+The Hessenberg form simplifies eigenvalue computations by leveraging its special structure, reducing the computational effort required in iterative algorithms like the QR algorithm.
+
+\subsubsection{Hessenberg Form Structure}
+A Hessenberg matrix is a nearly triangular matrix:
+\begin{itemize}
+	\item \textbf{Upper Hessenberg}: All elements below the first subdiagonal are zero.
+	      \begin{align}
+	      \myvec{a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+	      	a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
+	      	0      & a_{32} & a_{33} & \cdots & a_{3n} \\
+	      	0      & 0      & a_{43} & \cdots & a_{4n} \\
+	      	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	      	0      & 0      & 0      & \cdots & a_{nn}
+	      }
+	      \end{align}
+	\item \textbf{Lower Hessenberg}: All elements above the first superdiagonal are zero.
+	      \begin{align}
+	      \myvec{a_{11} & a_{12} & 0      & \cdots & 0      \\
+	      	a_{21} & a_{22} & a_{23} & \cdots & 0      \\
+	      	a_{31} & a_{32} & a_{33} & \cdots & 0      \\
+	      	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	      	a_{n1} & a_{n2} & a_{n3} & \cdots & a_{nn}}
+	      	\end{align}
+\end{itemize}
+
+\subsubsection{Time Complexity Reduction in the QR Algorithm}
+The QR algorithm involves two main steps per iteration:
+\begin{enumerate}
+	\item \textbf{QR Factorization}: Decompose $ H $ as $ Q R $, where $ Q $ is orthogonal, and $ R $ is upper triangular.
+	\item \textbf{Matrix Multiplication}: Update $ H $ as $ H \leftarrow RQ $.
+\end{enumerate}
+
+\subsubsection*{General Dense Matrix}
+For a general dense matrix:
+\begin{itemize}
+	\item \textbf{QR Factorization}: Requires $ O(n^3) $ operations.
+	\item \textbf{Matrix Multiplication}: Also requires $ O(n^3) $ operations.
+	\item \textbf{Total per iteration}: $ O(n^3) $.
+\end{itemize}
+
+\subsubsection{Hessenberg Matrix}
+For a Hessenberg matrix:
+\begin{itemize}
+	\item \textbf{QR Factorization}: Exploits the sparsity of $ H $, requiring only $ O(n^2) $ operations.
+	\item \textbf{Matrix Multiplication}: Similarly benefits from sparsity, requiring $ O(n^2) $ operations.
+	\item \textbf{Total per iteration}: $ O(n^2) $.
+\end{itemize}
+Thus, reducing a matrix to Hessenberg form results in significant computational savings for iterative processes. So for this project, the matrix is first transformed into the Upper Hessenberg form.
+
+\subsubsection{Why Reduce to Hessenberg Form ?}
+Transforming a general matrix to Hessenberg form:
+\begin{itemize}
+	\item \textbf{One-time cost}: Requires $ O(n^3) $ operations, typically via Given's rotations or Householder transformations.
+	\item After this reduction, the subsequent iterations benefit from the $ O(n^2) $ complexity, making the QR algorithm efficient for large-scale problems.
+\end{itemize}
+
+A crucial property of the QR algorithm is that it preserves the Hessenberg structure. This means the computational advantages of the Hessenberg form apply to every iteration.
+
+By reducing the per-iteration complexity from $ O(n^3) $ to $ O(n^2) $, Hessenberg form enables scalable eigenvalue computations, which are essential for solving large problems in scientific computing and engineering.
+
+
+\section{Implemented Eigenvalue Algorithm}
+
+\subsection{Hessenberg Reduction And QR Decomposition - Given's Rotations}
+\subsubsection{Givens Rotations in Eigenvalue Computations}
+
+Givens rotations are an essential tool in numerical linear algebra, particularly in algorithms for matrix factorizations and eigenvalue computations. They provide a way to introduce zeros into specific positions of a matrix while preserving its orthogonality or structure. This technique is frequently employed in QR decomposition, which is a cornerstone of iterative eigenvalue methods.
+
+\subsubsection{The Role of Givens Rotations in Eigenvalue Algorithms}
+
+In eigenvalue computations, particularly when using the \textbf{QR algorithm}, the goal is to iteratively transform a matrix $ A $ into a form where the eigenvalues can be directly inferred from its diagonal entries. The QR algorithm works by repeatedly factorizing the matrix into the product of an orthogonal matrix $ Q $ and an upper triangular matrix $ R $, followed by recomputing $ A $ as $ A = RQ $.
+
+\begin{itemize}
+	\item \textbf{Hessenberg Reduction}: 
+	      Before applying the QR algorithm, the matrix $ A $ is often reduced to Hessenberg form (upper or lower). This step simplifies the computation by ensuring that only a small number of entries need to be zeroed out during the QR iterations. Givens rotations are particularly effective for this step because they can introduce zeros below the first subdiagonal in a row-by-row manner.
+	      
+	\item \textbf{QR Iterations}: 
+	      During each iteration of the QR algorithm, Givens rotations can be used to apply orthogonal transformations, either to compute $ Q $ and $ R $ or to refine the matrix further. For example:
+	      \begin{itemize}
+	      	\item When combined with \textbf{Wilkinson shifts}, Givens rotations help to maintain numerical stability while accelerating convergence.
+	      	\item They can selectively target specific entries to ensure numerical precision, especially when the matrix has nearly degenerate eigenvalues.
+	      \end{itemize}
+\end{itemize}
+
+\subsubsection{Mathematical Description of Givens Rotations}
+
+A Givens rotation matrix $ G(i, k, \theta) $ is an orthogonal matrix that introduces a zero at the $ (i, k) $-th position of a matrix or vector. It is defined as:
+
+\begin{align}
+G(i, k, c, s) = \myvec{
+	1      & \cdots & 0        & \cdots & 0       & \cdots & 0      \\
+	\vdots & \ddots & \vdots   &        & \vdots  &        & \vdots \\
+	0      & \cdots & c        & \cdots & s       & \cdots & 0      \\
+	\vdots &        & \vdots   & \ddots & \vdots  &        & \vdots \\
+	0      & \cdots & -\bar{s} & \cdots & \bar{c} & \cdots & 0      \\
+	\vdots &        & \vdots   &        & \vdots  & \ddots & \vdots \\
+	0      & \cdots & 0        & \cdots & 0       & \cdots & 1 }
+\end{align}
+
+where $ c $ and $ s $ are complex values satisfying:
+\begin{align}
+	c \overline{c} + s \overline{s} = 1.
+\end{align}
+Here, $ \overline{s} $ represents the complex conjugate of $ s $, ensuring the rotation matrix $ G $ is unitary.
+
+The Givens rotation $ G $ is applied to matrix $ A $ as $ G^\top A $ (row transformation) or $ AG $ (column transformation).
+
+\subsubsection{Hessenberg Reduction Using Givens Rotations (Complex Values)}
+\begin{enumerate}
+	\item \textbf{Initialization}:
+	      Begin with a complex matrix $ A $ of size $ n \times n $.
+	      
+	\item \textbf{Column Elimination}:
+	      For each column $ k = 1, 2, \ldots, n-2 $, apply the following steps:
+	      \begin{enumerate}
+	      	\item Identify the elements $ a_{i,k} $ for $ i = k+2, k+3, \ldots, n $ that need to be zeroed.
+	      	\item For each such element $ a_{i,k} $, compute a Givens rotation $ G(i, k+1) $ that eliminates $ a_{i,k} $.
+	      \end{enumerate}
+	      
+	\item \textbf{Applying the Givens Rotation}:
+	          
+	      The Given's Rotation $G(i, k+1, c, s)$ as previously defined is applied.
+	      
+	      To eliminate $ a_{i,k} $, set:
+	      \begin{align}
+	      	r = \sqrt{|a_{k+1,k}|^2 + |a_{i,k}|^2}, \quad c = \frac{a_{k+1,k}}{r}, \quad s = \frac{-a_{i,k}}{r}.
+	      \end{align}
+	      
+	\item \textbf{Matrix Update}:
+	      Update the matrix $ A $ by applying the Givens rotation:
+	      \begin{align}
+	      	A' = G^H A G,
+	      \end{align}
+	      where $ G^H $ is the Hermitian transpose of $ G $. This step ensures that the transformations are unitary, preserving the eigenvalues of the matrix.
+	      
+	\item \textbf{Repeat}:
+	      Continue this process for all columns $ k = 1, 2, \ldots, n-2 $ to achieve the Hessenberg form.
+	      
+\end{enumerate}
+
+\subsubsection{Complex QR Decomposition Using Givens Rotations}
+
+\begin{enumerate}
+	\item \textbf{Input}: A Hessenberg matrix $ H \in \mathbb{C}^{n \times n} $.
+	          
+	\item \textbf{Initialization}:
+	      \begin{itemize}
+	      	\item Set $ Q = I_n $ (the identity matrix).
+	      	\item Copy $ H $ into $ R $ for in-place updates.
+	      \end{itemize}
+	          
+	\item \textbf{Process Each Sub-Diagonal Element}:
+	      \begin{enumerate}
+	      	\item For each $ i = 1, 2, \dots, n-1 $, compute the Givens rotation $ G_{i, i+1} $ to zero out $ h_{i+1, i} $.
+	      	\item Calculate rotation parameters $ c $ and $ s $:
+	      	      \begin{align}
+	      	      	c = \frac{h_{ii}}{\sqrt{|h_{ii}|^2 + |h_{i+1, i}|^2}}, \quad s = \frac{h_{i+1, i}}{\sqrt{|h_{ii}|^2 + |h_{i+1, i}|^2}}.
+	      	      \end{align}
+	      	\item Apply $ G_{i, i+1} $ from the left to $ R $:
+	      	      \begin{align}
+	      	      	R \gets G_{i, i+1}^* R.
+	      	      \end{align}
+	      	\item Apply $ G_{i, i+1} $ from the right to $ Q $:
+	      	      \begin{align}
+	      	      	Q \gets Q G_{i, i+1}.
+	      	      \end{align}
+	      \end{enumerate}
+	          
+	\item \textbf{Output}:
+	      \begin{itemize}
+	      	\item $ Q $: A unitary matrix.
+	      	\item $ R $: An upper triangular matrix such that $ H = QR $.
+	      \end{itemize}
+\end{enumerate}
+
+The eigenvalues are approximated iteratively as the diagonal entries of $ A $.
+
+\subsubsection{Efficiency and Stability for Complex Matrices}
+
+Givens rotations in the complex domain maintain numerical stability due to their unitary nature. They are especially effective in preserving the norm of complex vectors during transformations. This property is crucial for accurate eigenvalue computation, particularly when dealing with matrices with complex-valued entries.
+
+\subsubsection{Significance in Eigenvalue Computations}
+
+For complex matrices, Givens rotations provide:
+\begin{enumerate}
+	\item \textbf{Numerical Stability}: The unitary nature of complex Givens rotations ensures stability in iterative algorithms.
+	\item \textbf{Precision with Shifts}: When combined with complex shifts (e.g., Wilkinson shifts), they enhance the accuracy of eigenvalue isolation.
+	\item \textbf{Efficiency}: The sparsity of Hessenberg matrices minimizes computational overhead, making Givens rotations ideal for large-scale eigenvalue problems.
+\end{enumerate}
+
+
+\subsection{Wilkinson Shift}
+\subsubsection{Purpose of Wilkinson Shift}
+The Wilkinson shift is used to select a scalar shift $ \sigma $ that helps isolate the eigenvalue from the rest of the matrix during the QR iteration.
+
+The idea is to use the bottom-right $2\times2$ submatrix (block) of the Hessenberg matrix to compute the shift, making it easier to extract the eigenvalues of the matrix. By applying this shift, the matrix's eigenvalues are pushed apart, improving the accuracy of the QR iteration.
+
+\subsubsection{Mathematical Explanation}
+
+Given a Hessenberg matrix $ H \in \mathbb{C}^{n \times n} $, the Wilkinson shift $ \sigma $ is computed using the bottom-right 2-by-2 block of the matrix:
+
+\begin{align}
+	H = \begin{pmatrix}
+	h_{n-1,n-1} & h_{n-1,n} \\
+	h_{n,n-1} & h_{n,n}
+	\end{pmatrix}
+\end{align}
+
+The Wilkinson shift $ \sigma $ is defined as:
+
+\begin{align}
+	\sigma = \frac{h_{n,n} + h_{n-1,n-1}}{2} - \frac{\text{sgn}(h_{n,n} - h_{n-1,n-1})}{2} \sqrt{(h_{n,n} - h_{n-1,n-1})^2 + 4|h_{n,n-1}|^2}
+\end{align}
+
+The Wilkinson shift $ \sigma $ is computed to be close to the larger of the two eigenvalues of the bottom-right 2-by-2 block of $ H $. The formula involves two main components:
+\begin{itemize}
+	\item The term $ \frac{h_{n,n} + h_{n-1,n-1}}{2} $ represents the average of the diagonal elements, approximating the center of the eigenvalue pair.
+	\item The square root term $ \sqrt{(h_{n,n} - h_{n-1,n-1})^2 + 4|h_{n,n-1}|^2} $ measures the distance between the two eigenvalues, considering both the diagonal and off-diagonal elements. The factor $ \text{sgn}(h_{n,n} - h_{n-1,n-1}) $ ensures that the larger eigenvalue is chosen as the shift.
+\end{itemize}
+
+\subsection{Main QR Algorithm - With Wilkinson Shifts}
+In the QR algorithm, the Wilkinson shift is applied as follows:
+\begin{enumerate}
+	\item Compute the shift $ \sigma $.
+	\item Subtract $ \sigma $ from the hessenberg matrix $ H $ to create a shifted matrix $ H_{\text{shifted}} = H - \sigma I $, where $ I $ is the identity matrix.
+	\item Perform a QR decomposition on the shifted matrix: $ H_{\text{shifted}} = Q R $.
+	\item Form the new matrix $ H_{\text{new}} = R Q $, and repeat the QR process with the new matrix.
+	\item The QR iterations continue until the off-diagonal elements become sufficiently small, at which point the diagonal elements are the eigenvalues of the original matrix $ H $.
+\end{enumerate}
+
+The Wilkinson shift helps to accelerate the QR iteration process, particularly when the matrix has nearly degenerate eigenvalues, and improves the overall convergence.
+
+\section{Other algorithms}
+
+\subsection{Hessenberg Reduction}
+In addition to the method of Givens rotations, the Hessenberg Reduction process can also be performed using other matrix factorization techniques, such as Householder transformations.
+
+\subsubsection{Householder Transformations}
+
+Householder transformations are widely used for orthogonal reduction of a matrix to a Hessenberg form. The basic idea is to use an orthogonal matrix $ Q $ to zero out the subdiagonal elements of the matrix $ H $. This is done by reflecting the columns of $ H $ onto a vector that is parallel to the first column. 
+
+The Householder transformation for the $ i $-th column of a matrix $ A $ is given by:
+
+\begin{align}
+	H_i = I - 2 \frac{v v^T}{v^T v}
+\end{align}
+
+where $ v $ is a vector chosen to zero out the subdiagonal elements of the $ i $-th column of $ A $, and $ I $ is the identity matrix of the same size. The resulting matrix $ H_i $ is an orthogonal matrix, meaning that $ H_i^T H_i = I $. 
+
+To transform a matrix $ A \in \mathbb{C}^{n \times n} $ to Hessenberg form, the Householder transformation is applied iteratively to each column, from left to right. After applying the transformations, the matrix is reduced to upper Hessenberg form $ H $, where all elements below the first subdiagonal are zero.
+
+\subsubsection{Comparison with Givens Rotations}
+
+Both Householder and Givens methods are used to reduce a matrix to Hessenberg form, but they differ in their approach:
+\begin{itemize}
+	\item \textbf{Householder Transformations}: These apply orthogonal reflections to eliminate subdiagonal elements in one step for each column. This method is more efficient for large, dense matrices.
+	\item \textbf{Givens Rotations}: These use rotations to zero out individual elements and can be more efficient for sparse matrices. This algorithm can be parallelized.
+\end{itemize}
+
+\subsection{QR Decomposition}
+
+\subsubsection{Householder Transformations}
+After applying the Householder transformations iteratively, the QR decomposition of the Hessenberg matrix $H$ is given by:
+
+\begin{align}
+	Q = H_1 H_2 \cdots H_{n-1}
+\end{align}
+
+where $ Q $ is an orthogonal matrix and $ H_k $ are the Householder transformations.
+
+The upper triangular matrix $ R $ is obtained by applying the Householder transformations to the original matrix $ H $:
+
+\begin{align}R = H_{n-1} H_{n-2} \cdots H_1 H\end{align}
+and $H_i$ is as previously defined.
+
+\subsubsection{Gram-Schmidt}
+Given a Hessenberg matrix $ H \in \mathbb{C}^{n \times n} $, the Gram-Schmidt process can be used to find the QR decomposition $ H = QR $, where $ Q $ is an orthogonal matrix and $ R $ is an upper triangular matrix.
+
+\begin{enumerate}
+	\item \textbf{Input}: A Hessenberg matrix $ H \in \mathbb{C}^{n \times n} $.
+	\item \textbf{Initialization}:
+	      \begin{itemize}
+	      	\item Let $ Q = I_n $ (the identity matrix).
+	      	\item Let $ R = 0 $ (to store the upper triangular matrix).
+	      \end{itemize}
+	\item \textbf{Orthogonalization Process}:
+	      \begin{enumerate}
+	      	\item For $ i = 1, 2, \dots, n $, set the $ i $-th column of $ H $ as $ a_i $.
+	      	      \begin{align}
+	      	      	a_i = H[:, i]
+	      	      \end{align}
+	      	\item For $ j = 1, 2, \dots, i-1 $, compute the projection of $ a_i $ onto $ Q[:, j] $:
+	      	      \begin{align}
+	      	      	r_{ij} = Q[:, j]^T a_i
+	      	      \end{align}
+	      	\item Subtract the projection to make $ a_i $ orthogonal to the previous vectors:
+	      	      \begin{align}
+	      	      	a_i \gets a_i - r_{ij} Q[:, j] \quad \text{for each} \quad j < i
+	      	      \end{align}
+	      	\item Compute the norm of $ a_i $:
+	      	      \begin{align}
+	      	      	r_{ii} = \|a_i\|
+	      	      \end{align}
+	      	\item Normalize $ a_i $ to create the orthogonal vector $ q_i $:
+	      	      \begin{align}
+	      	      	q_i = \frac{a_i}{r_{ii}}
+	      	      \end{align}
+	      	\item Store the orthogonal vector in $ Q $:
+	      	      \begin{align}
+	      	      	Q[:, i] = q_i
+	      	      \end{align}
+	      	\item Store the upper triangular values in $ R $:
+	      	      \begin{align}
+	      	      	R_{ij} = r_{ij} \quad \text{for all} \quad j = 1, 2, \dots, i
+	      	      \end{align}
+	      \end{enumerate}
+	\item \textbf{Output}:
+	      \begin{itemize}
+	      	\item $ Q $, the orthogonal matrix.
+	      	\item $ R $, the upper triangular matrix.
+	      \end{itemize}
+\end{enumerate}
+
+\subsubsection{Divide and Conquer}
+
+Given a Hessenberg matrix $ H \in \mathbb{C}^{n \times n} $, the goal is to find matrices $ Q $ (unitary) and $ R $ (upper triangular) such that $ H = QR $. The DC algorithm proceeds as follows:
+
+\begin{enumerate}
+	\item \textbf{Split the Matrix:} Recursively divide the Hessenberg matrix $ H $ into two smaller sub-matrices. At each step, the matrix is split into two blocks, and the QR decomposition is computed on each block:
+	      \begin{align}
+	      	H = \begin{bmatrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{bmatrix}
+	      \end{align}
+	      where $ H_{11} $ is a block of size $ m \times m $, $ H_{22} $ is a block of size $ (n-m) \times (n-m) $, and $ H_{12} $, $ H_{21} $ are the off-diagonal blocks of appropriate sizes.
+	      
+	\item \textbf{Recursive QR Decomposition:} Perform QR decomposition on the smaller sub-matrices $ H_{11} $ and $ H_{22} $:
+	      \begin{align}
+	      	H_{11} = Q_1 R_1, \quad H_{22} = Q_2 R_2
+	      \end{align}
+	      where $ Q_1, Q_2 $ are unitary matrices and $ R_1, R_2 $ are upper triangular matrices.
+	      
+	\item \textbf{Combine Results:} Once the QR decompositions of the smaller blocks are computed, the results are combined to form the QR decomposition of the entire matrix. The combined decomposition has the form:
+	      \begin{align}
+	      	H = Q_1 \begin{bmatrix} R_1 & R_1^{-1} H_{12} \\ 0 & R_2 \end{bmatrix} Q_2^T
+	      \end{align}
+	      where the product of $ Q_1 $ and $ Q_2 $ forms the unitary matrix $ Q $, and the matrix $ R $ is the upper triangular part of the combined result.
+	      
+	\item \textbf{Repeat Until Base Case:} The algorithm continues recursively until the sub-matrices are reduced to small enough sizes, at which point the base case can be directly computed using standard QR methods.
+\end{enumerate}
+
+\subsubsection{Comparison with Givens Rotation}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\textbf{Method}    & \textbf{Time Complexity}       & \textbf{Numerical Stability} & \textbf{Memory Usage} \\
+	\hline
+	Householder        & $ O(n^3)\to O(n^2) $         & High                         & Moderate              \\
+	Divide and Conquer & $ O(n^3) \to O(n^2\log{n}) $ & Moderate                     & Low                   \\
+	Givens Rotation    & $ O(n^3) \to O(kn^2) $       & Very High                    & Low                   \\
+	Gram-Schmidt       & $ O(n^3) $                   & Low                          & Low                   \\
+	\hline
+\end{tabular}
+
+\subsection{Shifts}
+
+\subsubsection{Rayleigh Shift}
+The Rayleigh shift is a technique used to improve the convergence of the QR algorithm for eigenvalue computation. It involves shifting the matrix by a scalar value $ \sigma $ that approximates the eigenvalue of the matrix. This shift accelerates the convergence of the algorithm.
+
+The Rayleigh quotient for a matrix $ A \in \mathbb{C}^{n \times n} $ and a vector $ v \in \mathbb{C}^n $ is defined as:
+
+\begin{align}
+	\rho(A, v) = \frac{v^H A v}{v^H v}
+\end{align}
+
+where $ v^H $ denotes the Hermitian (conjugate transpose) of $ v $. For the QR algorithm, the Rayleigh shift $ \sigma $ is often chosen as the diagonal element of the matrix $ A $. Specifically, $ \sigma $ can be taken as the element $ A_{nn} $:
+
+\begin{align}
+	\sigma = A_{nn}
+\end{align}
+
+\subsubsection{Comparison with Wilkinson Shift}
+\begin{itemize}
+	\item \textbf{Wilkinson shift}: generally requires fewer iterations, particularly in cases where eigenvalues are close or the matrix is ill-conditioned.
+	\item The \textbf{Rayleigh shift}, while computationally simpler, may require more iterations when eigenvalues are close together or in ill-conditioned matrices.
+\end{itemize}
+
+\section{Code Implementation}
+The Python code can be found at
+
+\appendix
+
+\section{References}
+\begin{enumerate}
+	\item Golub, G. H., and Van Loan, C. F. *Matrix Computations*. Johns Hopkins University Press.
+	\item Wikipedia contributors. \textit{Eigenvalue Algorithm}. Wikipedia. Available at: \url{https://en.wikipedia.org/wiki/Eigenvalue_algorithm}
+	\item Arbenz, Peter. \textit{Lecture Notes on Numerical Methods for Eigenvalue Problems, Chapter 4}. ETH Zurich, 2018. Available at: \url{https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter4.pdf}
+	      
+\end{enumerate}
+
+\end{document}
